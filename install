@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+#
+
+require 'optparse'
+require 'fileutils'
+
+$PROGNAME = File.basename($0)
+
+######################
+# Add new files here #
+######################
+files = {
+    "tmux.conf" => ".tmux.conf"
+}
+
+def error_msg(msg=nil)
+  warn msg if msg
+  exit 1
+end
+
+def install_file(destination, source, force=nil)
+  if force == nil
+    error_msg("ERROR: #{destination} exists") if File.exists?(destination)
+  else
+    FileUtils.rm(destination) if File.exists?(desination)
+  end
+      
+  FileUtils.ln_s(source, destination)
+end
+
+def build_file(directory, file)
+  "#{directory}#{File::Separator}#{file}"
+end
+
+
+options = {
+  :prefix => ENV["HOME"]
+}
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: $PROGNAME [options]"
+
+  opts.on("--prefix DIR", 
+          "Directory to install files(default=#{options[:prefix]})") do |dir|
+    options[:prefix] = dir
+  end
+
+  opts.on("-f", "--force", "Overwrite existing files") do 
+    options[:force] = true
+  end
+end.parse!(ARGV)
+
+files.each do |s,d|
+  destination = build_file(options[:prefix], d)
+  source = build_file(Dir.getwd, s)
+  install_file(destination, source, options[:force])
+end
+
