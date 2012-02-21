@@ -10,19 +10,20 @@ $PROGNAME = File.basename($0)
 # Add new files here #
 ######################
 files = {
-    "tmux.conf" => ".tmux.conf"
+    "tmux.conf" => ".tmux.conf",
+    "gitconfig" => ".gitconfig"
 }
 
 def error_msg(msg=nil)
   warn msg if msg
-  exit 1
 end
 
 def install_file(destination, source, force=nil)
   if force == nil
-    error_msg("ERROR: #{destination} exists") if File.exists?(destination)
+    error_msg("ERROR: #{destination} exists, skipping") if File.exists?(destination)
+    return
   else
-    FileUtils.rm(destination) if File.exists?(desination)
+    FileUtils.rm(destination) if File.exists?(destination)
   end
       
   FileUtils.ln_s(source, destination)

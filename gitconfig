@@ -1,0 +1,16 @@
+[user]
+  name = David Bradford
+  email = dbradf@gmail.com
+
+[color]
+  ui = auto
+
+[alias]
+  lol = log --pretty=oneline --abbrev-commit --graph --decorate
+  lola = log --pretty=oneline --abbrev-commit --graph --decorate --all
+
+[merge]
+  tool = fugitive
+
+[mergetool "fugitive"]
+  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
