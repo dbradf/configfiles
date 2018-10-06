@@ -13,8 +13,6 @@ I keep a few more involved configs seperate
 Installation
 ------------
 
-install
-* --prefix - Install to a directory other than $HOME
-* --force - Overwrite existing files
-
-NOTE: install requires ruby
+```
+./install
+```

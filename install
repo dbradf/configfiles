@@ -1,59 +1,15 @@
-#!/usr/bin/env ruby
-#
+#!/usr/bin/env bash
 
-require 'optparse'
-require 'fileutils'
+install_file() {
+  local source=$1
+  local target=$2
 
-$PROGNAME = File.basename($0)
-
-######################
-# Add new files here #
-######################
-files = {
-    "tmux.conf" => ".tmux.conf",
-    "gitconfig" => ".gitconfig"
+  if [ ! -e "$HOME/$target" ]; then
+    ln -s `pwd`/$source $HOME/$target
+  else 
+    echo "Skipping $target, file already exists"
+  fi
 }
 
-def error_msg(msg=nil)
-  warn msg if msg
-end
-
-def install_file(destination, source, force=nil)
-  if force == nil
-    error_msg("ERROR: #{destination} exists, skipping") if File.exists?(destination)
-    return
-  else
-    FileUtils.rm(destination) if File.exists?(destination)
-  end
-      
-  FileUtils.ln_s(source, destination)
-end
-
-def build_file(directory, file)
-  "#{directory}#{File::Separator}#{file}"
-end
-
-
-options = {
-  :prefix => ENV["HOME"]
-}
-
-OptionParser.new do |opts|
-  opts.banner = "Usage: $PROGNAME [options]"
-
-  opts.on("--prefix DIR", 
-          "Directory to install files(default=#{options[:prefix]})") do |dir|
-    options[:prefix] = dir
-  end
-
-  opts.on("-f", "--force", "Overwrite existing files") do 
-    options[:force] = true
-  end
-end.parse!(ARGV)
-
-files.each do |s,d|
-  destination = build_file(options[:prefix], d)
-  source = build_file(Dir.getwd, s)
-  install_file(destination, source, options[:force])
-end
-
+install_file "gitconfig" ".gitconfig"
+install_file "tmux.conf" ".tmux.conf"
