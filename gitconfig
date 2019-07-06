@@ -1,6 +1,6 @@
 [user]
   name = David Bradford
-  email = dbradf@gmail.com
+  email = david.bradford@mongodb.com
 
 [color]
   ui = auto
@@ -29,3 +29,5 @@
 
 [mergetool "fugitive"]
   cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[core]
+	editor = nvim
