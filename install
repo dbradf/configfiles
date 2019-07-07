@@ -6,10 +6,11 @@ install_file() {
 
   if [ ! -e "$HOME/$target" ]; then
     ln -s `pwd`/$source $HOME/$target
-  else 
+  else
     echo "Skipping $target, file already exists"
   fi
 }
 
 install_file "gitconfig" ".gitconfig"
+install_file "gitignore" ".gitignore"
 install_file "tmux.conf" ".tmux.conf"

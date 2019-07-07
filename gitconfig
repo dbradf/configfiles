@@ -29,5 +29,7 @@
 
 [mergetool "fugitive"]
   cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+
 [core]
-	editor = nvim
+    editor = nvim
+    excludesfile = ~/.gitignore
