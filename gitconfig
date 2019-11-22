@@ -33,3 +33,7 @@
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
+
+[pager]
+    branch = false
+
