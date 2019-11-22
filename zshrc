@@ -1,11 +1,11 @@
-zmodload zsh/zprof
+# zmodload zsh/zprof
 
 export ZSH_CUSTOM="$HOME/.zsh_custom"
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="dbradf"
 
-plugins=(git git-prompt httpie kubectl npm pyenv python vscode)
+plugins=(git git-prompt httpie kubectl npm pyenv python virtualenv vscode)
 
 source $ZSH/oh-my-zsh.sh
 

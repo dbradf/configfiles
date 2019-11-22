@@ -1,5 +1,4 @@
 
-
 RCODE="%(?..%K{red}%B(%?%)%k%b )"
 CLOCK="%F{cyan}[%t]"
 
