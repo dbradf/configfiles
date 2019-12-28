@@ -13,6 +13,11 @@ set -o vi
 
 export PATH=$HOME/.local/bin:$HOME/bin:$PATH
 
+which exa > /dev/null
+if [ $? -eq 0 ]; then
+    alias l="exa -lahF"
+fi
+
 if [ -e "$HOME/.local_zshrc" ]; then
     source "$HOME/.local_zshrc"
 fi
