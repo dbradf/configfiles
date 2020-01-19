@@ -18,6 +18,11 @@ if [ $? -eq 0 ]; then
     alias l="exa -lahF"
 fi
 
+which xdg-open > /dev/null
+if [ $? -eq 0 ]; then
+    alias open="xdg-open"
+fi
+
 if [ -e "$HOME/.local_zshrc" ]; then
     source "$HOME/.local_zshrc"
 fi
