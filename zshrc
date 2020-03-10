@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 
 set -o vi
 
-export PATH=$HOME/.local/bin:$HOME/bin:$PATH
+export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:$PATH
 
 which exa > /dev/null
 if [ $? -eq 0 ]; then
