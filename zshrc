@@ -1,5 +1,7 @@
 # zmodload zsh/zprof
 
+export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:$PATH
+
 which starship > /dev/null
 if [ $? -eq 0 ]; then
     eval "$(starship init zsh)"
@@ -15,8 +17,6 @@ fi
 set -o vi
 
 alias source_zshrc="source $HOME/.zshrc"
-
-export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:$PATH
 
 which exa > /dev/null
 if [ $? -eq 0 ]; then
