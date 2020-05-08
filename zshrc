@@ -18,6 +18,12 @@ set -o vi
 
 alias source_zshrc="source $HOME/.zshrc"
 
+if [ -e "$HOME/.pyenv" ]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 which exa > /dev/null
 if [ $? -eq 0 ]; then
     alias l="exa -lahF"
