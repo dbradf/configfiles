@@ -4,8 +4,14 @@ install_file() {
   local source=$1
   local target=$2
 
-  if [ ! -e "$HOME/$target" ]; then
-    ln -s `pwd`/$source $HOME/$target
+  local target_file="$HOME/$target"
+  local target_dir=$(dirname "$target_file")
+
+  if [ ! -e "$target_file" ]; then
+    if [ ! -e "$target_dir" ]; then
+        mkdir -p "$target_dir"
+    fi
+    ln -s `pwd`/$source $target_file
   else
     echo "Skipping $target, file already exists"
   fi
@@ -22,4 +28,5 @@ install_file "inputrc" ".inputrc"
 install_file "zshrc" ".zshrc"
 install_file "zsh_custom" ".zsh_custom"
 install_file "starship.toml" ".config/starship.toml"
+install_file "alacritty.yml" ".config/alacritty/alacritty.yml"
 
