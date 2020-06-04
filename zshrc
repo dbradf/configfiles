@@ -1,6 +1,9 @@
 # zmodload zsh/zprof
 
-export PATH=$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin:$PATH
+export PATH=$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH
+
+export GOROOT=$HOME/tools/go
+export GOPATH=$HOME/gobase
 
 which starship > /dev/null
 if [ $? -eq 0 ]; then

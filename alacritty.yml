@@ -171,34 +171,6 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night Bright)
-# Colors (Material Theme)
-colors:
-  # Default colors
-  primary:
-    background: '#1e282d'
-    foreground: '#c4c7d1'
-
-  # Normal colors
-  normal:
-    black:   '#666666'
-    red:     '#eb606b'
-    green:   '#c3e88d'
-    yellow:  '#f7eb95'
-    blue:    '#80cbc4'
-    magenta: '#ff2f90'
-    cyan:    '#aeddff'
-    white:   '#ffffff'
-
-  # Bright colors
-  bright:
-    black:   '#ff262b'
-    red:     '#eb606b'
-    green:   '#c3e88d'
-    yellow:  '#f7eb95'
-    blue:    '#7dc6bf'
-    magenta: '#6c71c4'
-    cyan:    '#35434d'
-    white:   '#ffffff'
 #colors:
   # Default colors
   #primary:
@@ -275,6 +247,39 @@ colors:
   #   `- { index: 16, color: '#ff00ff' }`
   #
   #indexed_colors: []
+
+colors:
+  # Default colors - Argonaut
+  primary:
+    background: '#292C3E'
+    foreground: '#EBEBEB'
+
+  # Cursor colors
+  cursor:
+   text: '#FF261E'
+   cursor: '#FF261E'
+
+  # Normal colors
+  normal:
+    black:   '#0d0d0d'
+    red:     '#FF301B'
+    green:   '#A0E521'
+    yellow:  '#FFC620'
+    blue:    '#1BA6FA'
+    magenta: '#8763B8'
+    cyan:    '#21DEEF'
+    white:   '#EBEBEB'
+
+  # Bright colors
+  bright:
+    black:   '#6D7070'
+    red:     '#FF4352'
+    green:   '#B8E466'
+    yellow:  '#FFD750'
+    blue:    '#1BA6FA'
+    magenta: '#A578EA'
+    cyan:    '#73FBF1'
+    white:   '#FEFEF8'
 
 # Visual Bell
 #
