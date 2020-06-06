@@ -17,10 +17,6 @@ install_file() {
   fi
 }
 
-if [ ! -d "$HOME/.config" ]; then
-    mkdir -p "$HOME/.config"
-fi
-
 install_file "gitconfig" ".gitconfig"
 install_file "gitignore" ".gitignore"
 install_file "tmux.conf" ".tmux.conf"
@@ -29,4 +25,5 @@ install_file "zshrc" ".zshrc"
 install_file "zsh_custom" ".zsh_custom"
 install_file "starship.toml" ".config/starship.toml"
 install_file "alacritty.yml" ".config/alacritty/alacritty.yml"
+install_file "gtk.css" ".config/gtk-3.0/gtk.css"
 
