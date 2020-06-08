@@ -37,6 +37,11 @@ if [ $? -eq 0 ]; then
     alias open="xdg-open"
 fi
 
+which zoxide > /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(zoxide init zsh)"
+fi
+
 if [ -e "$HOME/.local_zshrc" ]; then
     source "$HOME/.local_zshrc"
 fi
