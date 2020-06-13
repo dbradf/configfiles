@@ -26,4 +26,5 @@ install_file "zsh_custom" ".zsh_custom"
 install_file "starship.toml" ".config/starship.toml"
 install_file "alacritty.yml" ".config/alacritty/alacritty.yml"
 install_file "gtk.css" ".config/gtk-3.0/gtk.css"
+install_file "ipython_config.py" ".ipython/profile_default/ipython_config.py"
 
