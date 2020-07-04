@@ -1,5 +1,6 @@
 .venv
 .idea
+.vscode
 clang+llvm-3.8.0-x86_64-apple-darwin
 cmake-build-debug/
 .coverage
