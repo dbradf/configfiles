@@ -1,0 +1,9 @@
+{
+    "python.dataScience.askForKernelRestart": false,
+    "window.zoomLevel": 0,
+    "python.languageServer": "Pylance",
+    "editor.rulers": [
+        100, 120
+    ]
+}
+

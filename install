@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+CONFIG_DIR_LINUX=".config"
+CONFIG_DIR_MAC="Library/Application Support"
+
+SYSTEM=$(uname -s)
+
 install_file() {
   local source=$1
   local target=$2
@@ -7,13 +12,29 @@ install_file() {
   local target_file="$HOME/$target"
   local target_dir=$(dirname "$target_file")
 
+  if [ ! -e "`pwd`/$source" ]; then
+      echo "Source file does not exist: $source" >&1
+      exit 1
+  fi
+
   if [ ! -e "$target_file" ]; then
     if [ ! -e "$target_dir" ]; then
         mkdir -p "$target_dir"
     fi
-    ln -s `pwd`/$source $target_file
+    ln -s "`pwd`/$source" "$target_file"
   else
     echo "Skipping $target, file already exists"
+  fi
+}
+
+install_to_config() {
+  local source=$1
+  local target=$2
+
+  if [ "$SYSTEM" = "Darwin" ]; then
+      install_file "$source" "$CONFIG_DIR_MAC/$target"
+  else
+      install_file "$source" "$CONFIG_DIR_LINUX/$target"
   fi
 }
 
@@ -27,4 +48,6 @@ install_file "starship.toml" ".config/starship.toml"
 install_file "alacritty.yml" ".config/alacritty/alacritty.yml"
 install_file "gtk.css" ".config/gtk-3.0/gtk.css"
 install_file "ipython_config.py" ".ipython/profile_default/ipython_config.py"
+
+install_to_config "vscode_settings.json" "Code/User/settings.json"
 
