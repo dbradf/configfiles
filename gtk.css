@@ -23,3 +23,4 @@ window.ssd headerbar.titlebar button.titlebutton {
     min-width: 0;
 }
 
+@import 'colors.css';
