@@ -42,8 +42,8 @@ if [ $? -eq 0 ]; then
     eval "$(zoxide init zsh)"
 fi
 
-if [ -e "$HOME/.local_zshrc" ]; then
-    source "$HOME/.local_zshrc"
+if [ -e "$HOME/.zshrc_local" ]; then
+    source "$HOME/.zshrc_local"
 fi
 
 
