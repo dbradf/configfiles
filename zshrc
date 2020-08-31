@@ -33,6 +33,10 @@ if [ -e "$HOME/.nvm" ]; then
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 fi
 
+if [ -e "$HOME/.gvm/scripts/gvm" ]; then
+    source "$HOME/.gvm/scripts/gvm"
+fi
+
 which exa > /dev/null
 if [ $? -eq 0 ]; then
     alias l="exa -lahF"
