@@ -37,3 +37,5 @@
 [pager]
     branch = false
 
+[pull]
+	ff = only
