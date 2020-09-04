@@ -38,16 +38,18 @@ install_to_config() {
   fi
 }
 
+install_file "alacritty.yml" ".config/alacritty/alacritty.yml"
 install_file "gitconfig" ".gitconfig"
 install_file "gitignore" ".gitignore"
-install_file "tmux.conf" ".tmux.conf"
+install_file "gtk.css" ".config/gtk-3.0/gtk.css"
 install_file "inputrc" ".inputrc"
+install_file "ipython_config.py" ".ipython/profile_default/ipython_config.py"
+install_file "neovim.init.vim" ".config/nvim/init.vim"
+install_file "neovim.plug.vim" ".local/share/nvim/site/autoload/plug.vim"
+install_file "starship.toml" ".config/starship.toml"
+install_file "tmux.conf" ".tmux.conf"
 install_file "zshrc" ".zshrc"
 install_file "zsh_custom" ".zsh_custom"
-install_file "starship.toml" ".config/starship.toml"
-install_file "alacritty.yml" ".config/alacritty/alacritty.yml"
-install_file "gtk.css" ".config/gtk-3.0/gtk.css"
-install_file "ipython_config.py" ".ipython/profile_default/ipython_config.py"
 
 install_to_config "vscode_settings.json" "Code/User/settings.json"
 
