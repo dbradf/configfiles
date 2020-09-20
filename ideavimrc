@@ -1,0 +1,21 @@
+
+let mapleader = ","
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set visualbell
+set showmatch
+
+set ideajoin
+
+nmap <Leader>v :action SplitVertically<cr>
+nmap <Leader>s :action SplitHorizontally<cr>
+nmap <Leader>wh :action SwitchLeft<cr>
+nmap <Leader>wl :action SwitchRight<cr>
+nmap <Leader>wj :action SwitchDown<cr>
+nmap <Leader>wk :action SwitchUp<cr>
+
+
