@@ -2,6 +2,11 @@
 
 export PATH=$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH
 
+local system_name=$(uname -s)
+if [ "$system_name" = "Darwin" ]; then
+    export PATH="/opt/homebrew/bin:$PATH"
+fi
+
 export GOROOT=$HOME/tools/go
 export GOPATH=$HOME/gobase
 
