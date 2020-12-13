@@ -1,5 +1,7 @@
 # zmodload zsh/zprof
 
+set -o vi
+
 export PATH=$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH
 
 local system_name=$(uname -s)
@@ -22,9 +24,7 @@ else
     source $ZSH/oh-my-zsh.sh
 fi
 
-set -o vi
 
-alias source_zshrc="source $HOME/.zshrc"
 
 if [ -e "$HOME/.pyenv" ]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
@@ -61,4 +61,19 @@ if [ -e "$HOME/.zshrc_local" ]; then
     source "$HOME/.zshrc_local"
 fi
 
+
+alias source_zshrc="source $HOME/.zshrc"
+alias pr="poetry run"
+
+mkcd() {
+    local directory=$1
+
+    if [ -z "$directory" ]; then
+        echo "ERROR: Missing directory" >&2
+        return 1
+    fi
+
+    mkdir $directory
+    cd $directory
+}
 
