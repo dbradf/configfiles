@@ -1,9 +1,10 @@
 {
-    "python.dataScience.askForKernelRestart": false,
     "window.zoomLevel": 0,
     "python.languageServer": "Pylance",
     "editor.rulers": [
         100, 120
-    ]
+    ],
+    "jupyter.askForKernelRestart": false,
+    "workbench.colorTheme": "Nord"
 }
 
