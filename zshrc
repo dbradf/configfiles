@@ -1,3 +1,4 @@
+PLUGINS_DIR="$HOME/etc/zshplugins"
 # zmodload zsh/zprof
 
 set -o vi
@@ -77,3 +78,19 @@ mkcd() {
     cd $directory
 }
 
+
+if [ -e "$PLUGINS_DIR/zsh-autosuggestions" ]; then
+    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8787ff,bold,underline"
+    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+    source $PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+setopt inc_append_history
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+export HISTFILE=~/.zhistory
+export HISTSIZE=10000
+export SAVEHIST=10000
