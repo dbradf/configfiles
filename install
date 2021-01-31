@@ -40,6 +40,7 @@ install_to_config() {
 
 install_file "99-noto-mono-color-emoji.conf" ".config/fontconfig/conf.d/99-noto-mono-color-emoji.conf"
 install_file "alacritty.yml" ".config/alacritty/alacritty.yml"
+install_file "config.fish" ".config/fish/config.fish"
 install_file "gitconfig" ".gitconfig"
 install_file "gitignore" ".gitignore"
 install_file "gtk.css" ".config/gtk-3.0/gtk.css"
