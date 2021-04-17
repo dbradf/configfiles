@@ -7,7 +7,13 @@ export PATH=$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH
 
 local system_name=$(uname -s)
 if [ "$system_name" = "Darwin" ]; then
-    export PATH="/opt/homebrew/bin:$PATH"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    # export PATH="/opt/homebrew/bin:$PATH"
+
+    for library in "openssl@1.1" "libffi" "bzip2"; do
+        export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/$library/lib"
+        export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/$library/include"
+    done
 fi
 
 export GOROOT=$HOME/tools/go
