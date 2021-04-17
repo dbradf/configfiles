@@ -51,6 +51,7 @@ install_file "neovim.init.vim" ".config/nvim/init.vim"
 install_file "neovim.plug.vim" ".local/share/nvim/site/autoload/plug.vim"
 install_file "starship.toml" ".config/starship.toml"
 install_file "tmux.conf" ".tmux.conf"
+install_file "wezterm.lua" ".config/wezterm/wezterm.lua"
 install_file "zshrc" ".zshrc"
 install_file "zsh_custom" ".zsh_custom"
 
