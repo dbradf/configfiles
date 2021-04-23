@@ -1,16 +1,14 @@
 [character]
-symbol = "$"
+success_symbol = "[❯](bold green)"
+error_symbol = "[✗](bold red)"
 
 [directory]
 fish_style_pwd_dir_length = 1
 
 [memory_usage]
-show_percentage = true
-show_swap = false
 threshold = -1
 disabled = false
 
 [time]
 disabled = false
 use_12hr = true
-
