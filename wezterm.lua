@@ -26,7 +26,9 @@ return {
         {key="j", mods="LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Down", 5}}},
         {key="k", mods="LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Up", 5}}},
         {key="l", mods="LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Right", 5}}},
+        {key="z", mods="LEADER", action="TogglePaneZoomState"},
 
+        {key="[", mods="LEADER", action="ActivateCopyMode"},
         {key="a", mods="LEADER|CTRL", action=wezterm.action{SendString="\x01"}},
     }
 }
