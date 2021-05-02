@@ -1,7 +1,11 @@
 local wezterm = require 'wezterm';
 
 return {
-    color_scheme = "LiquidCarbon",
+    initial_cols = 120,
+    initial_rows = 45,
+    color_scheme = "nord",
+    window_background_opacity = 0.85,
+    -- enable_wayland = true,
 
     leader = { key="a", mods="CTRL", timeout_milliseconds=1000 },
     keys = {
