@@ -1,0 +1,57 @@
+files:
+  - source: 99-noto-mono-color-emoji.conf
+    destination: fontconfig/conf.d/99-noto-mono-color-emoji.conf
+
+  - source: alacritty.yml
+    destination: alacritty/alacritty.yml
+
+  - source: config.fish
+    destination: fish/config.fish
+
+  - source: gtk.css
+    destination: gtk-3.0/gtk.css
+
+  - source: neovim
+    destination: nvim
+
+  - source: starship.toml
+    destination: starship.toml
+
+  - source: wezterm.lua
+    destination: wezterm/wezterm.lua
+      
+  - source: vscode_settings.json
+    destination: Code/User/settings.json
+
+  - source: ipython_config.py
+    destination: .ipython/profile_default/ipython_config.py
+    location: Home
+
+  - source: gitconfig
+    destination: .gitconfig
+    location: Home
+
+  - source: gitignore
+    destination: .gitignore
+    location: Home
+
+  - source: ideavimrc
+    destination: .ideavimrc
+    location: Home
+
+  - source: inputrc
+    destination: .inputrc
+    location: Home
+
+  - source: tmux.conf
+    destination: .tmux.conf
+    location: Home
+
+  - source: zshrc
+    destination: .zshrc
+    location: Home
+
+  - source: zsh_custom
+    destination: .zsh_custom
+    location: Home
+
