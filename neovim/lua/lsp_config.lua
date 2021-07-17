@@ -17,6 +17,9 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     buf_set_keymap('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
+    buf_set_keymap('i', '<tab>', 'pumvisible() ? "\\<C-n>" : "\\<tab>"', {expr = true})
+    buf_set_keymap('i', '<S-tab>', 'pumvisible() ? "\\<C-p>" : "\\<tab>"', {expr = true})
+
     completion.on_attach(client, bufnr)
 end
 
@@ -40,8 +43,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 )
 
-
 -- rust 
 require('rust-tools').setup({})
 require('rust-tools.inlay_hints').set_inlay_hints()
+require('rust-tools.runnables').runnables()
 

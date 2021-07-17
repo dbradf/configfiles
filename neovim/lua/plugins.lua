@@ -23,6 +23,11 @@ return require('packer').startup(function()
     use 'kabouzeid/nvim-lspinstall'
     use 'nvim-lua/completion-nvim'
 
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    }
+
     use 'simrat39/rust-tools.nvim'
 
     use {
