@@ -35,7 +35,8 @@ return require('packer').startup(function()
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
-    use 'ray-x/aurora'
+
+    use 'shaunsingh/nord.nvim'
 
 end)
 
