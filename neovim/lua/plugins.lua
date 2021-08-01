@@ -22,6 +22,7 @@ return require('packer').startup(function()
     use 'nvim-lua/lsp_extensions.nvim'
     use 'kabouzeid/nvim-lspinstall'
     use 'nvim-lua/completion-nvim'
+    use 'ray-x/lsp_signature.nvim'
 
     use {
         'nvim-telescope/telescope.nvim',
@@ -37,3 +38,4 @@ return require('packer').startup(function()
     use 'ray-x/aurora'
 
 end)
+

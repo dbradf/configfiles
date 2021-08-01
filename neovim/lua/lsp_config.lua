@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 local lspinstall = require('lspinstall')
+local lspsignature = require('lsp_signature')
 local completion = require('completion')
 
 local on_attach = function(client, bufnr)
@@ -21,6 +22,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('i', '<S-tab>', 'pumvisible() ? "\\<C-p>" : "\\<tab>"', {expr = true})
 
     completion.on_attach(client, bufnr)
+    lspsignature.on_attach()
 end
 
 lspinstall.setup()
