@@ -348,7 +348,7 @@ cursor:
 #  args:
 #    - --login
 shell:
-  program: /opt/homebrew/bin/tmux
+  program: /usr/bin/tmux
 
 # Startup directory
 #
