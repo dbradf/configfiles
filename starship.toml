@@ -12,3 +12,7 @@ disabled = false
 [time]
 disabled = false
 use_12hr = true
+
+[git_branch]
+symbol = "💠 "
+
