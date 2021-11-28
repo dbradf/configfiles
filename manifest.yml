@@ -3,7 +3,8 @@ files:
     destination: fontconfig/conf.d/99-noto-mono-color-emoji.conf
 
   - source: alacritty.yml
-    destination: alacritty/alacritty.yml
+    destination: .config/alacritty/alacritty.yml
+    location: Home
 
   - source: config.fish
     destination: fish/config.fish
@@ -12,7 +13,8 @@ files:
     destination: gtk-3.0/gtk.css
 
   - source: neovim
-    destination: nvim
+    destination: .config/nvim
+    location: Home
 
   - source: starship.toml
     destination: starship.toml
