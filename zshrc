@@ -1,7 +1,12 @@
 PLUGINS_DIR="$HOME/etc/zshplugins"
 # zmodload zsh/zprof
 
-set -o vi
+bindkey -v
+export KEYTIMEOUT=1
+
+autoload -U compinit; compinit
+
+source "$HOME/.zsh/aliases"
 
 export PATH=$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH
 
@@ -9,6 +14,7 @@ local system_name=$(uname -s)
 if [ "$system_name" = "Darwin" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     # export PATH="/opt/homebrew/bin:$PATH"
+    fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 
     for library in "openssl@1.1" "libffi" "bzip2"; do
         export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/$library/lib"
@@ -22,16 +28,7 @@ export GOPATH=$HOME/gobase
 which starship > /dev/null
 if [ $? -eq 0 ]; then
     eval "$(starship init zsh)"
-else
-    export ZSH_CUSTOM="$HOME/.zsh_custom"
-    export ZSH="$HOME/.oh-my-zsh"
-    ZSH_THEME="dbradf"
-
-    plugins=(git git-prompt httpie kubectl npm pyenv python virtualenv vscode)
-    source $ZSH/oh-my-zsh.sh
 fi
-
-
 
 if [ -e "$HOME/.pyenv" ]; then
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
@@ -69,10 +66,6 @@ fi
 if [ -e "$HOME/.zshrc_local" ]; then
     source "$HOME/.zshrc_local"
 fi
-
-
-alias source_zshrc="source $HOME/.zshrc"
-alias pr="poetry run"
 
 mkcd() {
     local directory=$1

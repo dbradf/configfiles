@@ -1,0 +1,10 @@
+alias source_zshrc="source $HOME/.zshrc"
+
+## tmux
+
+alias tmuxa="tmux attach -t"
+
+## python 
+
+alias pr="poetry run"
+alias pr_format="poetry run isort src tests && poetry run black src tests"

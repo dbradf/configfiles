@@ -53,6 +53,10 @@ files:
     destination: .zshrc
     location: Home
 
+  - source: aliases
+    destination: .zsh/aliases
+    location: Home
+
   - source: zsh_custom
     destination: .zsh_custom
     location: Home
