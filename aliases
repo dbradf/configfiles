@@ -8,3 +8,10 @@ alias tmuxa="tmux attach -t"
 
 alias pr="poetry run"
 alias pr_format="poetry run isort src tests && poetry run black src tests"
+
+python_build() {
+    local version=$1
+    local llvm_prefix=$(brew --prefix llvm)
+
+    CFLAGS="-O2" PYTHON_CONFIGURE_OPTS="--enable-optimizations --with-lto" LLVM_AR="${llvm_prefix}/bin/llvm-ar" pyenv install ${version}
+}
