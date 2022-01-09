@@ -6,3 +6,5 @@ cmake-build-debug/
 .coverage
 htmlcov/
 .python-version
+.DS_Store
+
