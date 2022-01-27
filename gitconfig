@@ -25,6 +25,7 @@
   ll   = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 
 [merge]
+  conflictStyle = diff3
   tool = fugitive
 
 [mergetool "fugitive"]
@@ -39,3 +40,6 @@
 
 [pull]
 	ff = only
+
+[checkout]
+    defaultRemote = origin
