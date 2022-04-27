@@ -63,6 +63,13 @@ if [ $? -eq 0 ]; then
     eval "$(zoxide init zsh)"
 fi
 
+which networksetup > /dev/null
+if [ $? -eq 0 ]; then
+    alias vpn-connect="networksetup -connectpppoeservice"
+    alias vpn-disconnect="networksetup -disconnectpppoeservice"
+    alias vpn-status="networksetup -showpppoestatus"
+fi
+
 if [ -e "$HOME/.zshrc_local" ]; then
     source "$HOME/.zshrc_local"
 fi
