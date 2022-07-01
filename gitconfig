@@ -1,6 +1,6 @@
 [user]
   name = David Bradford
-  email = david.bradford@mongodb.com
+  email = dbradf@gmail.com
 
 [color]
   ui = auto
@@ -26,10 +26,10 @@
 
 [merge]
   conflictStyle = diff3
-  tool = fugitive
+  tool = meld
 
-[mergetool "fugitive"]
-  cmd = meld
+[mergetool "meld"]
+  cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
 
 [core]
     editor = nvim
