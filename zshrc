@@ -104,3 +104,7 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 export HISTFILE=~/.zhistory
 export HISTSIZE=10000
 export SAVEHIST=10000
+
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
