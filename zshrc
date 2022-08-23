@@ -88,6 +88,10 @@ mkcd() {
     cd $directory
 }
 
+timestamp() {
+    node -e 'console.log(Date.now())'
+}
+
 
 if [ -e "$PLUGINS_DIR/zsh-autosuggestions" ]; then
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8787ff,bold,underline"
