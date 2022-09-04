@@ -92,6 +92,13 @@ timestamp() {
     node -e 'console.log(Date.now())'
 }
 
+enableKeyRepeat() {
+    if [ "$system_name" = "Darwin" ]; then
+        defaults write -g ApplePressAndHoldEnabled -bool false
+    fi
+}
+
+
 
 if [ -e "$PLUGINS_DIR/zsh-autosuggestions" ]; then
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8787ff,bold,underline"
