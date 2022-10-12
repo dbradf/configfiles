@@ -58,3 +58,7 @@ files:
     destination: .zsh_custom
     location: Home
 
+  - source: bin/git-diff-branch.sh
+    destination: bin/git-diff-branch
+    location: Home
+
