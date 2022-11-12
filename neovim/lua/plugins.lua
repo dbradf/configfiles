@@ -17,19 +17,19 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
 
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-    use 'neovim/nvim-lspconfig'
-    use 'nvim-lua/lsp_extensions.nvim'
-    use 'kabouzeid/nvim-lspinstall'
-    use 'nvim-lua/completion-nvim'
+    use 'nvim-treesitter/nvim-treesitter'
+
+    use 'williamboman/mason.nvim'    
+    use 'williamboman/mason-lspconfig.nvim'
+
+    use 'neovim/nvim-lspconfig' 
     use 'ray-x/lsp_signature.nvim'
+    use 'simrat39/rust-tools.nvim'
 
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
-
-    use 'simrat39/rust-tools.nvim'
 
     use {
         'hoob3rt/lualine.nvim',
@@ -38,5 +38,17 @@ return require('packer').startup(function()
 
     use 'shaunsingh/nord.nvim'
 
-end)
+     -- Completion framework:
+     use 'hrsh7th/nvim-cmp' 
 
+     -- LSP completion source:
+     use 'hrsh7th/cmp-nvim-lsp'
+ 
+     -- Useful completion sources:
+     use 'hrsh7th/cmp-nvim-lua'
+     use 'hrsh7th/cmp-nvim-lsp-signature-help'
+     use 'hrsh7th/cmp-vsnip'                             
+     use 'hrsh7th/cmp-path'                              
+     use 'hrsh7th/cmp-buffer'                            
+     use 'hrsh7th/vim-vsnip'          
+end)

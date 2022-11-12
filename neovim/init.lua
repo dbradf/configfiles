@@ -11,11 +11,12 @@ require('lsp_config')
 vim.g.nord_contrast = true
 vim.g.nord_borders = true
 
+require("mason").setup()
 require("nord").set()
 cmd("filetype plugin indent on")
 
-local ts = require 'nvim-treesitter.configs'
-ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
+-- local ts = require 'nvim-treesitter.configs'
+-- ts.setup {ensure_installed = 'maintained', highlight = {enable = true}}
 
 require('lualine').setup {
     options = {
