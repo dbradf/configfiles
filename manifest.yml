@@ -62,3 +62,7 @@ files:
     destination: bin/git-diff-branch
     location: Home
 
+  - source: psqlrc
+    destination: .psqlrc
+    location: Home
+
