@@ -104,6 +104,10 @@ enableKeyRepeat() {
     fi
 }
 
+ZSH_VI_MODE_FILE="$(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+if [ -e "$ZSH_VI_MODE_FILE" ]; then
+    source "$ZSH_VI_MODE_FILE"
+fi
 
 
 if [ -e "$PLUGINS_DIR/zsh-autosuggestions" ]; then
@@ -124,4 +128,3 @@ export SAVEHIST=10000
 
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
-
