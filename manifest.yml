@@ -21,7 +21,7 @@ files:
 
   - source: wezterm.lua
     destination: wezterm/wezterm.lua
-      
+
   - source: ipython_config.py
     destination: .ipython/profile_default/ipython_config.py
     location: Home
@@ -62,7 +62,18 @@ files:
     destination: bin/git-diff-branch
     location: Home
 
+  - source: bin/loop.sh
+    destination: bin/loop
+    location: Home
+
   - source: psqlrc
     destination: .psqlrc
     location: Home
 
+  - source: starship.toml
+    destination: .config/starship.toml
+    location: Home
+
+  - source: hammerspoon
+    destination: .hammerspoon
+    location: Home
