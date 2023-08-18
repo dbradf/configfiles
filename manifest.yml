@@ -62,10 +62,6 @@ files:
     destination: bin/git-diff-branch
     location: Home
 
-  - source: bin/loop.sh
-    destination: bin/loop
-    location: Home
-
   - source: psqlrc
     destination: .psqlrc
     location: Home
@@ -76,4 +72,8 @@ files:
 
   - source: hammerspoon
     destination: .hammerspoon
+    location: Home
+
+  - source: bin/brew-packages.sh
+    destination: bin/brew-packages
     location: Home
