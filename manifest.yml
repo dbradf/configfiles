@@ -74,6 +74,6 @@ files:
     destination: .hammerspoon
     location: Home
 
-  - source: bin/brew-packages.sh
+  - source: bin/brew_packages.py
     destination: bin/brew-packages
     location: Home
