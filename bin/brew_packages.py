@@ -8,13 +8,12 @@ PACKAGES=[
     'nvm',
     'tmux',
     'tree',
-    'withgraphite/tap/graphite',
+    # 'withgraphite/tap/graphite',
     'zsh-vi-mode',
+    'zsh-autosuggestions',
 ]
 
-CASKS=(
-    'amethyst',
-)
+CASKS = []
 
 def main():
     for package in PACKAGES:

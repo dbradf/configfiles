@@ -109,11 +109,11 @@ if [ -e "$ZSH_VI_MODE_FILE" ]; then
     source "$ZSH_VI_MODE_FILE"
 fi
 
-
-if [ -e "$PLUGINS_DIR/zsh-autosuggestions" ]; then
+ZSH_AUTOSUGGEST_FILE="$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if [ -e "$ZSH_AUTOSUGGEST_FILE" ]; then
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8787ff,bold,underline"
     export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-    source $PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source $ZSH_AUTOSUGGEST_FILE
 fi
 
 setopt inc_append_history
@@ -128,3 +128,4 @@ export SAVEHIST=10000
 
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+export GT_RENAME=1
