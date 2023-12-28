@@ -1,0 +1,6 @@
+session_name: vscode
+windows:
+  - window_name: git
+  - window_name: server
+  - window_name: app
+  - window_name: test

@@ -3,6 +3,9 @@ alias source_zshrc="source $HOME/.zshrc"
 ## tmux
 
 alias tmuxa="tmux attach -t"
+alias tmux-vscode="tmuxp load ~/etc/configfiles/tmuxp/vscode.yml"
+alias tmux-work="tmuxp load ~/etc/configfiles/tmuxp/work.yml"
+
 
 ## python 
 

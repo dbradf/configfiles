@@ -7,6 +7,7 @@ PACKAGES=[
     'neovim',
     'nvm',
     'tmux',
+    'tmuxp',
     'tree',
     # 'withgraphite/tap/graphite',
     'zsh-vi-mode',

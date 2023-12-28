@@ -1,0 +1,14 @@
+session_name: work
+windows:
+  - window_name: mono
+    shell_command_before:
+      - cd ~/graphite/monologue
+  - window_name: mono2
+    shell_command_before:
+      - cd ~/graphite/monologue2
+  - window_name: mono3
+    shell_command_before:
+      - cd ~/graphite/monologue3
+  - window_name: test
+    shell_command_before:
+      - cd ~/graphite/david-test-repo
