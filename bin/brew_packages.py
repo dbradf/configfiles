@@ -2,6 +2,7 @@
 import os
 
 PACKAGES=[
+    'atuin',
     'htop',
     'jq',
     'neovim',
@@ -9,7 +10,6 @@ PACKAGES=[
     'tmux',
     'tmuxp',
     'tree',
-    # 'withgraphite/tap/graphite',
     'zsh-vi-mode',
     'zsh-autosuggestions',
 ]

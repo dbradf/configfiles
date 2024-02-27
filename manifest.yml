@@ -77,3 +77,11 @@ files:
   - source: bin/brew_packages.py
     destination: bin/brew-packages
     location: Home
+
+  - source: bin/timestamp.sh
+    destination: bin/timestamp
+    location: Home
+
+  - source: bin/git-clean.sh
+    destination: bin/git-clean
+    location: Home

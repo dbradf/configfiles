@@ -2,12 +2,15 @@ alias source_zshrc="source $HOME/.zshrc"
 
 ## tmux
 
-alias tmuxa="tmux attach -t"
-alias tmux-vscode="tmuxp load ~/etc/configfiles/tmuxp/vscode.yml"
-alias tmux-work="tmuxp load ~/etc/configfiles/tmuxp/work.yml"
+alias t="tmux"
+alias ta="tmux attach -t"
+alias t-mono="tmuxp load ~/etc/configfiles/tmuxp/mono.yml"
+alias t-mono2="tmuxp load ~/etc/configfiles/tmuxp/mono2.yml"
+alias t-mono3="tmuxp load ~/etc/configfiles/tmuxp/mono3.yml"
+alias t-work="tmuxp load ~/etc/configfiles/tmuxp/work.yml"
 
 
-## python 
+## python
 
 alias pr="poetry run"
 alias pr_format="poetry run isort src tests && poetry run black src tests"
@@ -18,3 +21,11 @@ python_build() {
 
     CFLAGS="-O2" PYTHON_CONFIGURE_OPTS="--enable-optimizations --with-lto" LLVM_AR="${llvm_prefix}/bin/llvm-ar" pyenv install ${version}
 }
+
+
+## graphite / git
+
+alias gws="g submit --web"
+alias gsf="g sync --force"
+alias gs="g submit"
+alias gx="git-clean"

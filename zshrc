@@ -1,5 +1,6 @@
 PLUGINS_DIR="$HOME/etc/zshplugins"
 # zmodload zsh/zprof
+local system_name=$(uname -s)
 
 bindkey -v
 export KEYTIMEOUT=1
@@ -10,7 +11,18 @@ source "$HOME/.zsh/aliases"
 
 export PATH=$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH
 
-local system_name=$(uname -s)
+if [ -e "$HOME/.nvm" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  if [ "$system_name" = "Darwin" ]; then
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  else
+    source /usr/share/nvm/nvm.sh
+    source /usr/share/nvm/bash_completion
+    source /usr/share/nvm/install-nvm-exec
+  fi
+fi
+
 if [ "$system_name" = "Darwin" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     # export PATH="/opt/homebrew/bin:$PATH"
@@ -39,17 +51,6 @@ if [ -e "$HOME/.pyenv" ]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-if [ -e "$HOME/.nvm" ]; then
-  export NVM_DIR="$HOME/.nvm"
-  if [ "$system_name" = "Darwin" ]; then
-    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-  else
-    source /usr/share/nvm/nvm.sh
-    source /usr/share/nvm/bash_completion
-    source /usr/share/nvm/install-nvm-exec
-  fi
-fi
 
 
 if [ -e "$HOME/.gvm/scripts/gvm" ]; then
@@ -78,6 +79,11 @@ if [ $? -eq 0 ]; then
     alias vpn-status="networksetup -showpppoestatus"
 fi
 
+which atuin > /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(atuin init zsh)"
+fi
+
 if [ -e "$HOME/.zshrc_local" ]; then
     source "$HOME/.zshrc_local"
 fi
@@ -92,10 +98,6 @@ mkcd() {
 
     mkdir $directory
     cd $directory
-}
-
-timestamp() {
-    node -e 'console.log(Date.now())'
 }
 
 enableKeyRepeat() {
