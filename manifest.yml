@@ -82,6 +82,6 @@ files:
     destination: bin/timestamp
     location: Home
 
-  - source: bin/git-clean.sh
-    destination: bin/git-clean
+  - source: bin/git-clear.sh
+    destination: bin/git-clear
     location: Home
