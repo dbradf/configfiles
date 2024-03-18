@@ -96,8 +96,20 @@ mkcd() {
         return 1
     fi
 
-    mkdir $directory
+    mkdir -p $directory
     cd $directory
+}
+
+gccd() {
+    local remote=$1
+    local name=$2
+
+    if [ -z "$name" ]; then
+        name="${$(basename $remote)%.git}"
+    fi
+
+    git clone $remote $name
+    cd $name
 }
 
 enableKeyRepeat() {
