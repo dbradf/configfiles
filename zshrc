@@ -118,18 +118,19 @@ enableKeyRepeat() {
     fi
 }
 
-ZSH_VI_MODE_FILE="$(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
-if [ -e "$ZSH_VI_MODE_FILE" ]; then
-    source "$ZSH_VI_MODE_FILE"
-fi
+if [ "$system_name" = "Darwin" ]; then
+  ZSH_VI_MODE_FILE="$(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+    if [ -e "$ZSH_VI_MODE_FILE" ]; then
+        source "$ZSH_VI_MODE_FILE"
+    fi
 
-ZSH_AUTOSUGGEST_FILE="$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-if [ -e "$ZSH_AUTOSUGGEST_FILE" ]; then
-    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8787ff,bold,underline"
-    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-    source $ZSH_AUTOSUGGEST_FILE
+    ZSH_AUTOSUGGEST_FILE="$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    if [ -e "$ZSH_AUTOSUGGEST_FILE" ]; then
+        export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#8787ff,bold,underline"
+        export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+        source $ZSH_AUTOSUGGEST_FILE
+    fi
 fi
-
 setopt inc_append_history
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' accept-exact '*(N)'
