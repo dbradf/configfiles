@@ -79,11 +79,6 @@ if [ $? -eq 0 ]; then
     alias vpn-status="networksetup -showpppoestatus"
 fi
 
-which atuin > /dev/null
-if [ $? -eq 0 ]; then
-    eval "$(atuin init zsh)"
-fi
-
 if [ -e "$HOME/.zshrc_local" ]; then
     source "$HOME/.zshrc_local"
 fi
@@ -144,3 +139,8 @@ export SAVEHIST=10000
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 export GT_RENAME=1
+
+which atuin > /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(atuin init zsh)"
+fi
