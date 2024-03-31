@@ -30,6 +30,14 @@ files:
     destination: .gitconfig
     location: Home
 
+  - source: gitconfig.graphite
+    destination: .gitconfig.graphite
+    location: Home
+
+  - source: gitconfig.personal
+    destination: .gitconfig.personal
+    location: Home
+
   - source: gitignore
     destination: .gitignore
     location: Home

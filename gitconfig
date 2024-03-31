@@ -1,6 +1,8 @@
-[user]
-  name = David Bradford
-  email = dbradf@gmail.com
+[includeIf "gitdir:~/"]
+    path = ~/.gitconfig.personal
+
+[includeIf "gitdir:~/graphite/"]
+    path = ~/.gitconfig.graphite
 
 [color]
   ui = auto
@@ -43,5 +45,6 @@
 
 [checkout]
     defaultRemote = origin
+
 [fetch]
 	prune = true
