@@ -93,3 +93,7 @@ files:
   - source: bin/git-clear.sh
     destination: bin/git-clear
     location: Home
+
+  - source: alias.toml
+    destination: .alias.toml
+    location: Home

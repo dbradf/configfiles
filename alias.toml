@@ -1,0 +1,20 @@
+[g]
+cmd = "git"
+aliases = [
+    { alias = "lol", cmd = "log"}
+]
+
+[b]
+cmd = "yarn"
+aliases = [
+    {alias = "b", cmd = "build"}
+]
+
+[t]
+cmd = "yarn"
+expand = { s = '@monologue/server' }
+aliases = [
+    { alias = "1", cmd = "workspace {0} test-one"},
+    { alias = "a", cmd = "workspace {0} test"}
+]
+
