@@ -1,20 +1,53 @@
+[db]
+cmd = "yarn"
+expand = { db = '@monologue/db-client' }
+aliases = [
+    { alias = "lm", cmd = "workspace @db list-migrations" },
+    { alias = "cm", cmd = "workspace @db create-migrations" },
+    { alias = "m", cmd = "workspace @db migrate-prod-dangerous" },
+]
+
 [g]
 cmd = "git"
 aliases = [
-    { alias = "lol", cmd = "log"}
+    { alias = "lol", cmd = "log --pretty=oneline --abbrev-commit --graph --decorate" },
 ]
 
-[b]
-cmd = "yarn"
+[ms]
+cmd = "yarn manage-stg"
 aliases = [
-    {alias = "b", cmd = "build"}
+    { alias = "j", cmd = "job" },
+    { alias = "m", cmd = "merge" },
+    { alias = "o", cmd = "oneoffs" },
+    { alias = "u", cmd = "user" },
+]
+
+[mp]
+cmd = "yarn manage-prod"
+aliases = [
+    { alias = "j", cmd = "job" },
+    { alias = "m", cmd = "merge" },
+    { alias = "o", cmd = "oneoffs" },
+    { alias = "u", cmd = "user" },
+]
+
+[y]
+cmd = "yarn"
+expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability' }
+aliases = [
+    { alias = "b", cmd = "build" },
+    { alias = "i", cmd = "install" },
+    { alias = "l", cmd = "lint" },
 ]
 
 [t]
 cmd = "yarn"
-expand = { s = '@monologue/server' }
+expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability' }
 aliases = [
-    { alias = "1", cmd = "workspace {0} test-one"},
-    { alias = "a", cmd = "workspace {0} test"}
+    { alias = "1", cmd = "workspace {0} test-one" },
+    { alias = "a", cmd = "workspace {0} test" },
 ]
 
+[v]
+cmd = "aws"
+aliases = [{ alias = "l", cmd = "sso login" }]
