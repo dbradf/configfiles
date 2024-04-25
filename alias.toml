@@ -5,6 +5,7 @@ aliases = [
     { alias = "lm", cmd = "workspace @db list-migrations" },
     { alias = "cm", cmd = "workspace @db create-migrations" },
     { alias = "m", cmd = "workspace @db migrate-prod-dangerous" },
+    { alias = "r", cmd = "workspace @db revert-last-prod-migration-dangerous" },
 ]
 
 [g]
@@ -15,6 +16,7 @@ aliases = [
 
 [ms]
 cmd = "yarn manage-stg"
+expand = { m = '--repoOwner withgraphite --repoName monologue' }
 aliases = [
     { alias = "j", cmd = "job" },
     { alias = "m", cmd = "merge" },
@@ -28,6 +30,7 @@ aliases = [
     { alias = "j", cmd = "job" },
     { alias = "m", cmd = "merge" },
     { alias = "o", cmd = "oneoffs" },
+    { alias = "pr", cmd = "pr" },
     { alias = "u", cmd = "user" },
 ]
 
@@ -35,6 +38,7 @@ aliases = [
 cmd = "yarn"
 expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability' }
 aliases = [
+    { alias = "bd", cmd = "buildserverdeps" },
     { alias = "b", cmd = "build" },
     { alias = "i", cmd = "install" },
     { alias = "l", cmd = "lint" },
@@ -42,7 +46,7 @@ aliases = [
 
 [t]
 cmd = "yarn"
-expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability' }
+expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability', ts = '@monologue/ts-helpers' }
 aliases = [
     { alias = "1", cmd = "workspace {0} test-one" },
     { alias = "a", cmd = "workspace {0} test" },
