@@ -12,25 +12,44 @@ aliases = [
 cmd = "git"
 aliases = [
     { alias = "lol", cmd = "log --pretty=oneline --abbrev-commit --graph --decorate" },
+    { alias = "sd", cmd = "stash drop" },
+    { alias = "sl", cmd = "stash list" },
+    { alias = "sp", cmd = "stash push -u" },
+]
+
+[gt]
+cmd = "gt"
+aliases = [
+    { alias = 'd', cmd = "delete --force" },
+    { alias = 's', cmd = "submit" },
+    { alias = 'ws', cmd = "submit --web" },
 ]
 
 [ms]
 cmd = "yarn manage-stg"
-expand = { m = '--repoOwner withgraphite --repoName monologue' }
+expand = { m = '--repoOwner withgraphite --repoName monologue', d = '--repoOwner withgraphite --repoName david-test-repo' }
 aliases = [
+    { alias = "c", cmd = "console" },
     { alias = "j", cmd = "job" },
     { alias = "m", cmd = "merge" },
+    { alias = "mq", cmd = "mq" },
     { alias = "o", cmd = "oneoffs" },
     { alias = "u", cmd = "user" },
 ]
 
 [mp]
 cmd = "yarn manage-prod"
+expand = { m = '--repoOwner withgraphite --repoName monologue', d = '--repoOwner withgraphite --repoName david-test-repo' }
 aliases = [
+    { alias = "c", cmd = "console" },
+    { alias = "ci", cmd = "ci" },
     { alias = "j", cmd = "job" },
     { alias = "m", cmd = "merge" },
+    { alias = "mq", cmd = "mq" },
+    { alias = "mwr", cmd = "mwr" },
     { alias = "o", cmd = "oneoffs" },
     { alias = "pr", cmd = "pr" },
+    { alias = "r", cmd = "repo" },
     { alias = "u", cmd = "user" },
 ]
 
@@ -38,15 +57,19 @@ aliases = [
 cmd = "yarn"
 expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability' }
 aliases = [
+    { alias = "a", cmd = "app" },
     { alias = "bd", cmd = "buildserverdeps" },
     { alias = "b", cmd = "build" },
+    { alias = "b1", cmd = "workspace {0} build" },
     { alias = "i", cmd = "install" },
     { alias = "l", cmd = "lint" },
+    { alias = "l1", cmd = "workspace {0} lint" },
+    { alias = "ss", cmd = "server-stg" },
 ]
 
 [t]
 cmd = "yarn"
-expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability', ts = '@monologue/ts-helpers' }
+expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability', ts = '@monologue/ts-helpers', c = "@monologue/cache-client" }
 aliases = [
     { alias = "1", cmd = "workspace {0} test-one" },
     { alias = "a", cmd = "workspace {0} test" },

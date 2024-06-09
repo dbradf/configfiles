@@ -94,6 +94,10 @@ files:
     destination: bin/git-clear
     location: Home
 
+  - source: bin/pretty.sh
+    destination: bin/pretty
+    location: Home
+
   - source: alias.toml
     destination: .alias.toml
     location: Home
