@@ -144,3 +144,8 @@ which atuin > /dev/null
 if [ $? -eq 0 ]; then
     eval "$(atuin init zsh)"
 fi
+
+which a > /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(a)"
+fi

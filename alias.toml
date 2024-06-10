@@ -1,3 +1,11 @@
+[c]
+cmd = "cargo"
+aliases = [
+    { alias = "b", cmd = "build" },
+    { alias = "f", cmd = "fmt" },
+    { alias = "r", cmd = "build --release"}
+]
+
 [db]
 cmd = "yarn"
 expand = { db = '@monologue/db-client' }
