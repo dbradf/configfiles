@@ -3,12 +3,12 @@ cmd = "cargo"
 aliases = [
     { alias = "b", cmd = "build" },
     { alias = "f", cmd = "fmt" },
-    { alias = "r", cmd = "build --release"}
+    { alias = "r", cmd = "build --release" },
 ]
 
 [db]
 cmd = "yarn"
-expand = { db = '@monologue/db-client' }
+expand = [{ key = 'db', value = '@monologue/db-client' }]
 aliases = [
     { alias = "lm", cmd = "workspace @db list-migrations" },
     { alias = "cm", cmd = "workspace @db create-migrations" },
@@ -19,6 +19,7 @@ aliases = [
 [g]
 cmd = "git"
 aliases = [
+    { alias = "c", cmd = "you meant to use gt" },
     { alias = "lol", cmd = "log --pretty=oneline --abbrev-commit --graph --decorate" },
     { alias = "sd", cmd = "stash drop" },
     { alias = "sl", cmd = "stash list" },
@@ -28,26 +29,38 @@ aliases = [
 [gt]
 cmd = "gt"
 aliases = [
-    { alias = 'd', cmd = "delete --force" },
+    { alias = 'a', cmd = 'add' },
+    { alias = 'd', cmd = "diff" },
+    { alias = 'dc', cmd = "diff --cached" },
+    { alias = 'df', cmd = "delete --force" },
+    { alias = 'r', cmd = 'restack' },
     { alias = 's', cmd = "submit" },
+    { alias = 'sf', cmd = "sync --force" },
+    { alias = 'sp', cmd = "split" },
+    { alias = 'st', cmd = "status" },
     { alias = 'ws', cmd = "submit --web" },
 ]
 
 [ms]
 cmd = "yarn manage-stg"
-expand = { m = '--repoOwner withgraphite --repoName monologue', d = '--repoOwner withgraphite --repoName david-test-repo' }
+expand = [
+    { key = 'm', value = '--repoOwner withgraphite --repoName monologue' },
+    { key = 'd', value = '--repoOwner withgraphite --repoName david-test-repo' },
+]
 aliases = [
     { alias = "c", cmd = "console" },
     { alias = "j", cmd = "job" },
     { alias = "m", cmd = "merge" },
-    { alias = "mq", cmd = "mq" },
     { alias = "o", cmd = "oneoffs" },
     { alias = "u", cmd = "user" },
 ]
 
 [mp]
 cmd = "yarn manage-prod"
-expand = { m = '--repoOwner withgraphite --repoName monologue', d = '--repoOwner withgraphite --repoName david-test-repo' }
+expand = [
+    { key = 'm', value = '--repoOwner withgraphite --repoName monologue' },
+    { key = 'd', value = '--repoOwner withgraphite --repoName david-test-repo' },
+]
 aliases = [
     { alias = "c", cmd = "console" },
     { alias = "ci", cmd = "ci" },
@@ -63,7 +76,11 @@ aliases = [
 
 [y]
 cmd = "yarn"
-expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability' }
+expand = [
+    { key = 's', value = '@monologue/server' },
+    { key = 'db', value = '@monologue/db-client' },
+    { key = 'm', value = '@monologue/mergeability' },
+]
 aliases = [
     { alias = "a", cmd = "app" },
     { alias = "bd", cmd = "buildserverdeps" },
@@ -72,12 +89,21 @@ aliases = [
     { alias = "i", cmd = "install" },
     { alias = "l", cmd = "lint" },
     { alias = "l1", cmd = "workspace {0} lint" },
+    { alias = "sp", cmd = "server" },
     { alias = "ss", cmd = "server-stg" },
 ]
 
 [t]
 cmd = "yarn"
-expand = { s = '@monologue/server', db = '@monologue/db-client', m = '@monologue/mergeability', ts = '@monologue/ts-helpers', c = "@monologue/cache-client" }
+expand = [
+    { key = 's', value = '@monologue/server' },
+    { key = 'db', value = '@monologue/db-client' },
+    { key = 'm', value = '@monologue/mergeability' },
+    { key = 'ts', value = '@monologue/ts-helpers' },
+    { key = 'c', value = "@monologue/cache-client" },
+    { key = 'n', value = "@monologue/notifications" },
+    { key = 'cli', value = "@withgraphite/graphite-cli" },
+]
 aliases = [
     { alias = "1", cmd = "workspace {0} test-one" },
     { alias = "a", cmd = "workspace {0} test" },
