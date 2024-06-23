@@ -1,101 +1,101 @@
 [c]
 cmd = "cargo"
 aliases = [
-    { alias = "b", cmd = "build" },
-    { alias = "f", cmd = "fmt" },
-    { alias = "r", cmd = "build --release" },
+    { sub_alias = "b", arguments = "build" },
+    { sub_alias = "f", arguments = "fmt" },
+    { sub_alias = "r", arguments = "build --release" },
 ]
 
 [db]
 cmd = "yarn"
-expand = [{ key = 'db', value = '@monologue/db-client' }]
+expansions = [{ key = 'db', value = '@monologue/db-client' }]
 aliases = [
-    { alias = "lm", cmd = "workspace @db list-migrations" },
-    { alias = "cm", cmd = "workspace @db create-migrations" },
-    { alias = "m", cmd = "workspace @db migrate-prod-dangerous" },
-    { alias = "r", cmd = "workspace @db revert-last-prod-migration-dangerous" },
+    { sub_alias = "lm", arguments = "workspace @db list-migrations" },
+    { sub_alias = "cm", arguments = "workspace @db create-migrations" },
+    { sub_alias = "m", arguments = "workspace @db migrate-prod-dangerous" },
+    { sub_alias = "r", arguments = "workspace @db revert-last-prod-migration-dangerous" },
 ]
 
 [g]
 cmd = "git"
 aliases = [
-    { alias = "c", cmd = "you meant to use gt" },
-    { alias = "lol", cmd = "log --pretty=oneline --abbrev-commit --graph --decorate" },
-    { alias = "sd", cmd = "stash drop" },
-    { alias = "sl", cmd = "stash list" },
-    { alias = "sp", cmd = "stash push -u" },
+    { sub_alias = "c", arguments = "you meant to use gt" },
+    { sub_alias = "lol", arguments = "log --pretty=oneline --abbrev-commit --graph --decorate" },
+    { sub_alias = "sd", arguments = "stash drop" },
+    { sub_alias = "sl", arguments = "stash list" },
+    { sub_alias = "sp", arguments = "stash push -u" },
 ]
 
 [gt]
 cmd = "gt"
 aliases = [
-    { alias = 'a', cmd = 'add' },
-    { alias = 'd', cmd = "diff" },
-    { alias = 'dc', cmd = "diff --cached" },
-    { alias = 'df', cmd = "delete --force" },
-    { alias = 'r', cmd = 'restack' },
-    { alias = 's', cmd = "submit" },
-    { alias = 'sf', cmd = "sync --force" },
-    { alias = 'sp', cmd = "split" },
-    { alias = 'st', cmd = "status" },
-    { alias = 'ws', cmd = "submit --web" },
+    { sub_alias = 'a', arguments = 'add' },
+    { sub_alias = 'd', arguments = "diff" },
+    { sub_alias = 'dc', arguments = "diff --cached" },
+    { sub_alias = 'df', arguments = "delete --force" },
+    { sub_alias = 'r', arguments = 'restack' },
+    { sub_alias = 's', arguments = "submit" },
+    { sub_alias = 'sf', arguments = "sync --force" },
+    { sub_alias = 'sp', arguments = "split" },
+    { sub_alias = 'st', arguments = "status" },
+    { sub_alias = 'ws', arguments = "submit --web" },
 ]
 
 [ms]
 cmd = "yarn manage-stg"
-expand = [
+expansions = [
     { key = 'm', value = '--repoOwner withgraphite --repoName monologue' },
     { key = 'd', value = '--repoOwner withgraphite --repoName david-test-repo' },
 ]
 aliases = [
-    { alias = "c", cmd = "console" },
-    { alias = "j", cmd = "job" },
-    { alias = "m", cmd = "merge" },
-    { alias = "o", cmd = "oneoffs" },
-    { alias = "u", cmd = "user" },
+    { sub_alias = "c", arguments = "console" },
+    { sub_alias = "j", arguments = "job" },
+    { sub_alias = "m", arguments = "merge" },
+    { sub_alias = "o", arguments = "oneoffs" },
+    { sub_alias = "u", arguments = "user" },
 ]
 
 [mp]
 cmd = "yarn manage-prod"
-expand = [
+expansions = [
     { key = 'm', value = '--repoOwner withgraphite --repoName monologue' },
     { key = 'd', value = '--repoOwner withgraphite --repoName david-test-repo' },
 ]
 aliases = [
-    { alias = "c", cmd = "console" },
-    { alias = "ci", cmd = "ci" },
-    { alias = "j", cmd = "job" },
-    { alias = "m", cmd = "merge" },
-    { alias = "mq", cmd = "mq" },
-    { alias = "mwr", cmd = "mwr" },
-    { alias = "o", cmd = "oneoffs" },
-    { alias = "pr", cmd = "pr" },
-    { alias = "r", cmd = "repo" },
-    { alias = "u", cmd = "user" },
+    { sub_alias = "c", arguments = "console" },
+    { sub_alias = "ci", arguments = "ci" },
+    { sub_alias = "j", arguments = "job" },
+    { sub_alias = "m", arguments = "merge" },
+    { sub_alias = "mq", arguments = "mq" },
+    { sub_alias = "mwr", arguments = "mwr" },
+    { sub_alias = "o", arguments = "oneoffs" },
+    { sub_alias = "pr", arguments = "pr" },
+    { sub_alias = "r", arguments = "repo" },
+    { sub_alias = "u", arguments = "user" },
 ]
 
 [y]
 cmd = "yarn"
-expand = [
+expansions = [
     { key = 's', value = '@monologue/server' },
     { key = 'db', value = '@monologue/db-client' },
     { key = 'm', value = '@monologue/mergeability' },
 ]
 aliases = [
-    { alias = "a", cmd = "app" },
-    { alias = "bd", cmd = "buildserverdeps" },
-    { alias = "b", cmd = "build" },
-    { alias = "b1", cmd = "workspace {0} build" },
-    { alias = "i", cmd = "install" },
-    { alias = "l", cmd = "lint" },
-    { alias = "l1", cmd = "workspace {0} lint" },
-    { alias = "sp", cmd = "server" },
-    { alias = "ss", cmd = "server-stg" },
+    { sub_alias = "a", arguments = "app" },
+    { sub_alias = "bd", arguments = "buildserverdeps" },
+    { sub_alias = "b", arguments = "build" },
+    { sub_alias = "b1", arguments = "workspace {0} build" },
+    { sub_alias = "i", arguments = "install" },
+    { sub_alias = "l", arguments = "lint" },
+    { sub_alias = "l1", arguments = "workspace {0} lint" },
+    { sub_alias = "sp", arguments = "server" },
+    { sub_alias = "ss", arguments = "server-stg" },
 ]
 
 [t]
 cmd = "yarn"
-expand = [
+expansions = [
     { key = 's', value = '@monologue/server' },
     { key = 'db', value = '@monologue/db-client' },
     { key = 'm', value = '@monologue/mergeability' },
@@ -105,10 +105,10 @@ expand = [
     { key = 'cli', value = "@withgraphite/graphite-cli" },
 ]
 aliases = [
-    { alias = "1", cmd = "workspace {0} test-one" },
-    { alias = "a", cmd = "workspace {0} test" },
+    { sub_alias = "1", arguments = "workspace {0} test-one" },
+    { sub_alias = "a", arguments = "workspace {0} test" },
 ]
 
 [v]
 cmd = "aws"
-aliases = [{ alias = "l", cmd = "sso login" }]
+aliases = [{ sub_alias = "l", arguments = "sso login" }]
