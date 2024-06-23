@@ -98,6 +98,6 @@ files:
     destination: bin/pretty
     location: Home
 
-  - source: alias.toml
-    destination: .alias.toml
+  - source: aliases.toml
+    destination: .aliases.toml
     location: Home
