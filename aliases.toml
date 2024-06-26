@@ -1,9 +1,23 @@
+[a]
+cmd = "aws"
+aliases = [
+    { sub_alias = "ecr-pass", arguments = "ecr get-login-password --region us-west-2" },
+    { sub_alias = "l", arguments = "sso login" },
+    { sub_alias = "o", arguments = "sso logout" },
+]
+
 [c]
 cmd = "cargo"
 aliases = [
     { sub_alias = "b", arguments = "build" },
     { sub_alias = "f", arguments = "fmt" },
     { sub_alias = "r", arguments = "build --release" },
+]
+
+[d]
+cmd = "docker"
+aliases = [
+    { sub_alias = "l", arguments = "login --username AWS --password-stdin 064159781857.dkr.ecr.us-west-2.amazonaws.com" },
 ]
 
 [db]
@@ -96,19 +110,16 @@ aliases = [
 [t]
 cmd = "yarn"
 expansions = [
-    { key = 's', value = '@monologue/server' },
+    { key = 'c', value = "@monologue/cache-client" },
+    { key = 'cli', value = "@withgraphite/graphite-cli" },
     { key = 'db', value = '@monologue/db-client' },
     { key = 'm', value = '@monologue/mergeability' },
-    { key = 'ts', value = '@monologue/ts-helpers' },
-    { key = 'c', value = "@monologue/cache-client" },
     { key = 'n', value = "@monologue/notifications" },
-    { key = 'cli', value = "@withgraphite/graphite-cli" },
+    { key = 's', value = '@monologue/server' },
+    { key = 's3', value = '@monologue/s3-client' },
+    { key = 'ts', value = '@monologue/ts-helpers' },
 ]
 aliases = [
     { sub_alias = "1", arguments = "workspace {0} test-one" },
     { sub_alias = "a", arguments = "workspace {0} test" },
 ]
-
-[v]
-cmd = "aws"
-aliases = [{ sub_alias = "l", arguments = "sso login" }]
