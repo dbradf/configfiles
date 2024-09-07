@@ -5,6 +5,7 @@ PACKAGES=[
     'atuin',
     'htop',
     'jq',
+    'marta',
     'neovim',
     'nvm',
     'tmux',
