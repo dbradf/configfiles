@@ -57,9 +57,9 @@ if [ -e "$HOME/.gvm/scripts/gvm" ]; then
     source "$HOME/.gvm/scripts/gvm"
 fi
 
-which exa > /dev/null
+which eza > /dev/null
 if [ $? -eq 0 ]; then
-    alias l="exa -lahF"
+    alias l="eza -lahF"
 fi
 
 which xdg-open > /dev/null
@@ -149,3 +149,4 @@ which alias-manager > /dev/null
 if [ $? -eq 0 ]; then
     eval "$(alias-manager)"
 fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

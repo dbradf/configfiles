@@ -3,7 +3,10 @@ import os
 
 PACKAGES=[
     'atuin',
+    'bat',
+    'eza',
     'htop',
+    'hyperfine',
     'jq',
     'marta',
     'neovim',
@@ -13,6 +16,7 @@ PACKAGES=[
     'tree',
     'zsh-vi-mode',
     'zsh-autosuggestions',
+    'zoxide',
 ]
 
 CASKS = []
