@@ -6,6 +6,8 @@ return {
     color_scheme = "nord",
     window_background_opacity = 0.85,
     -- enable_wayland = true,
+    --
+    enable_tab_bar = false,
 
     leader = { key="a", mods="CTRL", timeout_milliseconds=1000 },
     keys = {
