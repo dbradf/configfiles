@@ -139,3 +139,9 @@ aliases = [
     { sub_alias = "1", arguments = "workspace {0} test-one" },
     { sub_alias = "a", arguments = "workspace {0} test" },
 ]
+
+[w]
+cmd = "wezterm"
+aliases = [
+  { sub_alias = "t", arguments = "cli set-tab-title" },
+]

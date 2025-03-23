@@ -3,11 +3,12 @@ local wezterm = require 'wezterm';
 return {
     font = wezterm.font('JetBrains Mono'),
     font_size = 13.0,
+    color_scheme = "Galaxy",
+    default_cwd = "~",
     initial_cols = 120,
     initial_rows = 45,
-    color_scheme = "Galaxy",
     window_background_opacity = 0.90,
-    -- enable_tab_bar = false,
+    window_close_confirmation = "NeverPrompt",
 
     leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 },
     keys = {
