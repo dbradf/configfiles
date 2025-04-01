@@ -102,3 +102,7 @@ files:
   - source: aliases.toml
     destination: .aliases.toml
     location: Home
+
+  - source: epithet.toml
+    destination: epithet/epithet.toml
+    location: Config
