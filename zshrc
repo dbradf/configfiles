@@ -9,7 +9,7 @@ autoload -U compinit; compinit
 
 source "$HOME/.zsh/aliases"
 
-export PATH=$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH
+export PATH="$HOME/.local/epithet/bin:$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH"
 
 if [ -e "$HOME/.nvm" ]; then
   export NVM_DIR="$HOME/.nvm"
@@ -145,8 +145,4 @@ if [ $? -eq 0 ]; then
     eval "$(atuin init zsh)"
 fi
 
-which alias-manager > /dev/null
-if [ $? -eq 0 ]; then
-    eval "$(alias-manager)"
-fi
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
