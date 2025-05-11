@@ -5,12 +5,13 @@ return {
     font_size = 13.0,
     color_scheme = "Galaxy",
     default_cwd = "~",
+    hide_tab_bar_if_only_one_tab = true,
     initial_cols = 120,
     initial_rows = 45,
     window_background_opacity = 0.90,
     window_close_confirmation = "NeverPrompt",
 
-    leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 },
+    leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 },
     keys = {
         { key = "1",  mods = "LEADER",       action = wezterm.action { ActivateTab = 0 } },
         { key = "2",  mods = "LEADER",       action = wezterm.action { ActivateTab = 1 } },
