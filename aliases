@@ -2,7 +2,6 @@ alias source_zshrc="source $HOME/.zshrc"
 
 ## tmux
 
-alias t="tmux"
 alias ta="tmux attach -t"
 alias t-mono="tmuxp load ~/etc/configfiles/tmuxp/mono.yml"
 alias t-mono2="tmuxp load ~/etc/configfiles/tmuxp/mono2.yml"
