@@ -1,3 +1,135 @@
-[config]
-bin_directory = "~/.local/epithet/bin/"
+[global_expansions]
+a = '@monologue/graphite-app'
+ai = "@monologue/ai-client"
+c = "@monologue/cache-client"
+cli = "@withgraphite/graphite-cli"
+clis = "@withgraphite/cli-shared"
+db = '@monologue/db-client'
+ga = "@monologue/parse-gitattributes"
+gco = '@monologue/parse-github-codeowners'
+gcr = "@withgraphite/graphite-cli-routes"
+git = '@monologue/git-client'
+gtis = "@withgraphite/gti-server"
+gte = "@withgraphite/gt-engine"
+infra = '@monologue/infra'
+m = '@monologue/mergeability'
+n = "@monologue/notifications"
+s = '@monologue/server'
+s3 = '@monologue/s3-client'
+shared = '@monologue/shared-types'
+splash = '@monologue/splash-page'
+splog = '@monologue/splog'
+sta = '@withgraphite/system-tray-app'
+ts = '@monologue/ts-helpers'
 
+[a]
+sub_aliases = [
+    { name = "ecr-pass", command = "aws ecr get-login-password --region us-west-2" },
+    { name = "l", command = "aws sso login" },
+    { name = "o", command = "aws sso logout" },
+]
+
+[c]
+sub_aliases = [
+    { name = "b", command = "cargo build" },
+    { name = "f", command = "cargo fmt" },
+    { name = "r", command = "cargo build --release" },
+]
+
+[d]
+sub_aliases = [
+    { name = "l", command = "docker login --username AWS --password-stdin 064159781857.dkr.ecr.us-west-2.amazonaws.com" },
+]
+
+[db]
+sub_aliases = [
+    { name = "lm", command = "yarn workspace @monologue/db-client list-migrations" },
+    { name = "cm", command = "yarn workspace @monologue/db-client create-migrations" },
+    { name = "m", command = "yarn workspace @monologue/db-client migrate-prod-dangerous" },
+    { name = "r", command = "yarn workspace @monologue/db-client revert-last-prod-migration-dangerous" },
+]
+
+[g]
+sub_aliases = [
+    { name = "c", command = "you meant to use gt" },
+    { name = "lol", command = "git log --pretty=oneline --abbrev-commit --graph --decorate" },
+    { name = "rs", command = "git restore --staged" },
+    { name = "sd", command = "git stash drop" },
+    { name = "sl", command = "git stash list" },
+    { name = "sp", command = "git stash push -u" },
+]
+
+[gt]
+cmd = "~/bin/gt"
+sub_aliases = [
+    { name = 'a', command = '~/bin/gt add' },
+    { name = 'd', command = "~/bin/gt diff" },
+    { name = 'dc', command = "~/bin/gt diff --cached" },
+    { name = 'df', command = "~/bin/gt delete --force" },
+    { name = 'r', command = '~/bin/gt restack' },
+    { name = 's', command = "~/bin/gt submit" },
+    { name = 'sf', command = "~/bin/gt sync --force" },
+    { name = 'sp', command = "~/bin/gt split" },
+    { name = 'st', command = "~/bin/gt status" },
+    { name = 'ws', command = "~/bin/gt submit --web" },
+]
+
+[ms]
+expansions = [
+    { key = 'd', value = '--repoOwner withgraphite --repoName david-test-repo' },
+    { key = 'm', value = '--repoOwner withgraphite --repoName monologue' },
+]
+sub_aliases = [
+    { name = "c", command = "yarn manage-stg console" },
+    { name = "j", command = "yarn manage-stg job" },
+    { name = "m", command = "yarn manage-stg merge" },
+    { name = "o", command = "yarn manage-stg oneoffs" },
+    { name = "u", command = "yarn manage-stg user" },
+]
+
+[mp]
+expansions = [
+    { key = 'm', value = '--repoOwner withgraphite --repoName monologue' },
+    { key = 'd', value = '--repoOwner withgraphite --repoName david-test-repo' },
+]
+sub_aliases = [
+    { name = "c", command = "yarn manage-prod console" },
+    { name = "ci", command = "yarn manage-prod ci" },
+    { name = "j", command = "yarn manage-prod job" },
+    { name = "m", command = "yarn manage-prod merge" },
+    { name = "mq", command = "yarn manage-prod mq" },
+    { name = "mwr", command = "yarn manage-prod mwr" },
+    { name = "o", command = "yarn manage-prod oneoffs" },
+    { name = "pr", command = "yarn manage-prod pr" },
+    { name = "r", command = "yarn manage-prod repo" },
+    { name = "u", command = "yarn manage-prod user" },
+]
+
+[y]
+sub_aliases = [
+    { name = "a", command = "yarn app" },
+    { name = "bd", command = "yarn buildserverdeps" },
+    { name = "bc", and = [
+        "yarn root:buildclideps",
+        "yarn workspace @withgraphite:graphite-cli build",
+    ] },
+    { name = "bcd", command = "yarn root:buildclideps" },
+    { name = "b", command = "yarn build" },
+    { name = "b1", command = "yarn workspace {0} build" },
+    { name = "fe", command = "yarn app frontend-only" },
+    { name = "i", command = "yarn install" },
+    { name = "l", command = "yarn lint" },
+    { name = "lf", command = "yarn lint -- --fix" },
+    { name = "l1", command = "yarn workspace {0} lint" },
+    { name = "sp", command = "yarn server" },
+    { name = "ss", command = "yarn server-stg" },
+]
+
+[t]
+sub_aliases = [
+    { name = "1", command = "yarn workspace {0} test-one" },
+    { name = "a", command = "yarn workspace {0} test" },
+]
+
+[w]
+sub_aliases = [{ name = "t", command = "wezterm cli set-tab-title" }]
