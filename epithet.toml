@@ -50,6 +50,7 @@ sub_aliases = [
 ]
 
 [g]
+command = "git"
 sub_aliases = [
     { name = "c", command = "you meant to use gt" },
     { name = "lol", command = "git log --pretty=oneline --abbrev-commit --graph --decorate" },
@@ -60,7 +61,7 @@ sub_aliases = [
 ]
 
 [gt]
-cmd = "~/bin/gt"
+command = "~/bin/gt"
 sub_aliases = [
     { name = 'a', command = '~/bin/gt add' },
     { name = 'd', command = "~/bin/gt diff" },
