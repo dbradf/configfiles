@@ -106,3 +106,7 @@ files:
   - source: epithet.toml
     destination: epithet/epithet.toml
     location: Config
+
+  - source: CLAUDE.md
+    destination: .claude/CLAUDE.md
+    location: Home
