@@ -112,7 +112,7 @@ sub_aliases = [
     { name = "bd", command = "yarn buildserverdeps" },
     { name = "bc", and = [
         "yarn root:buildclideps",
-        "yarn workspace @withgraphite:graphite-cli build",
+        "yarn workspace @withgraphite/graphite-cli build",
     ] },
     { name = "bcd", command = "yarn root:buildclideps" },
     { name = "b", command = "yarn build" },
