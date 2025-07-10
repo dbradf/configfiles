@@ -35,8 +35,10 @@
   pager = delta
 
 [delta]
-  navigate = true
   dark = true
+  line-numbers = true
+  navigate = true
+  theme = DarkNeon
 
 [fetch]
 	prune = true
