@@ -107,6 +107,7 @@ sub_aliases = [
 ]
 
 [y]
+command = "yarn"
 sub_aliases = [
     { name = "a", command = "yarn app" },
     { name = "bd", command = "yarn buildserverdeps" },

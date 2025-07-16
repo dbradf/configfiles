@@ -8,6 +8,7 @@ PACKAGES=[
     'git-delta',
     'htop',
     'hyperfine',
+    'jj',
     'jq',
     'neovim',
     'nvm',

@@ -110,3 +110,11 @@ files:
   - source: CLAUDE.md
     destination: .claude/CLAUDE.md
     location: Home
+
+  - source: claude_settings.json
+    destination: .claude/settings.json
+    location: Home
+
+  - source: claude-commands
+    destination: .claude/commands
+    location: Home
