@@ -123,7 +123,7 @@ sub_aliases = [
     { name = "l", command = "yarn lint" },
     { name = "lf", command = "yarn lint -- --fix" },
     { name = "l1", command = "yarn workspace {0} lint" },
-    { name = "sp", command = "yarn server" },
+    { name = "sp", command = "yarn server-prod" },
     { name = "ss", command = "yarn server-stg" },
 ]
 
