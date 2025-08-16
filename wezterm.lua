@@ -11,7 +11,7 @@ return {
     window_background_opacity = 0.90,
     window_close_confirmation = "NeverPrompt",
 
-    leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 },
+    leader = { key = "z", mods = "CTRL", timeout_milliseconds = 1000 },
     keys = {
         { key = "1",  mods = "LEADER",       action = wezterm.action { ActivateTab = 0 } },
         { key = "2",  mods = "LEADER",       action = wezterm.action { ActivateTab = 1 } },

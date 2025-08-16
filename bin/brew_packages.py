@@ -6,6 +6,7 @@ PACKAGES=[
     'bat',
     'eza',
     'git-delta',
+    'go',
     'htop',
     'hyperfine',
     'jj',
@@ -23,7 +24,9 @@ PACKAGES=[
     'zoxide',
 ]
 
-CASKS = []
+CASKS = [
+    'ghostty',
+]
 
 def main():
     for package in PACKAGES:
