@@ -16,7 +16,6 @@
 
 - **Scripts**: `~/code/claude-scripts` - Custom scripts and automation
 - **Memory**: `~/memories` - Important information to remember (markdown)
-- **Journal**: `~/journal` - Personal journal entries (markdown)
 - **Ideas**: `~/ideas` - Creative ideas and thoughts (markdown)
 - **To dos**: `~/todos` - Things to do, reminders, etc (markdown)
 - **Projects**: `~/projects` - Active projects I'm working on (markdown)
@@ -47,6 +46,7 @@ As I do work, append important information to that file that you need to remembe
 
 - Never use `any` types.
 - Keep code as simple as possible.
+- Names should be specific and helpful.
 
 ### Running tests for typescript files in monologue
 
