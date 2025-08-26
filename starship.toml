@@ -2,9 +2,6 @@
 success_symbol = "[❯](bold green)"
 error_symbol = "[✗](bold red)"
 
-[directory]
-fish_style_pwd_dir_length = 1
-
 [memory_usage]
 threshold = -1
 disabled = false
@@ -15,4 +12,7 @@ use_12hr = true
 
 [git_branch]
 symbol = "💠 "
-
+ 
+[env_var.AWS_PROFILE]
+default = 'prod'
+style = 'bold bright-red'
