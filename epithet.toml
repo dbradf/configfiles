@@ -86,11 +86,13 @@ sub_aliases = [
     { name = "j", command = "yarn manage-stg job" },
     { name = "m", command = "yarn manage-stg merge" },
     { name = "o", command = "yarn manage-stg oneoffs" },
+    { name = "on", command = "yarn manage-stg onboarding" },
     { name = "pr", command = "yarn manage-stg pr" },
     { name = "u", command = "yarn manage-stg user" },
 ]
 
 [mp]
+command = "yarn manage-prod"
 expansions = [
     { key = 'm', value = '--repoOwner withgraphite --repoName monologue' },
     { key = 'd', value = '--repoOwner withgraphite --repoName david-test-repo' },
@@ -103,6 +105,7 @@ sub_aliases = [
     { name = "mq", command = "yarn manage-prod mq" },
     { name = "mwr", command = "yarn manage-prod mwr" },
     { name = "o", command = "yarn manage-prod oneoffs" },
+    { name = "on", command = "yarn manage-prod onboarding" },
     { name = "pr", command = "yarn manage-prod pr" },
     { name = "r", command = "yarn manage-prod repo" },
     { name = "u", command = "yarn manage-prod user" },
