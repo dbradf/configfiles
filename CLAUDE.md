@@ -44,9 +44,11 @@ As I do work, append important information to that file that you need to remembe
 
 ### Code Quality
 
-- Never use `any` types.
-- Keep code as simple as possible.
-- Names should be specific and helpful.
+- never use `any` types.
+- do not include return types that can easily be inferred.
+- keep code as simple as possible.
+- names should be specific and helpful.
+- context parameters should always be the last parameter.
 
 ### Running tests for typescript files in monologue
 
@@ -66,3 +68,25 @@ As I do work, append important information to that file that you need to remembe
   - Creating a mock should be abstracted into a function that returns the mock object.
 - Use "chia" style assertions for typescript/javascript code.
 - ALWAYS use "should" when describing a test case.
+
+### Frontend
+
+- All frontend components should use mobx `observer`. They should be defined as follows:
+
+```typescript
+const ComponentName = observer(function ComponentName({prop1, prop2}: {prop1: PropType; prop2: PropType}) {
+  //... logic here
+  return (
+    <>
+    hello world
+    </>
+  );
+});
+```
+
+### Database
+
+- Use uuids for id columns and don't use deprecated options when creating the ids.
+- All date columns should be "timestamptz".
+- varchar should not include a length.
+- do not use postres enums, instead use `enumTransformer` to enforce the values in typeorm.
