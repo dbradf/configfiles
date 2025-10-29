@@ -136,6 +136,7 @@ sub_aliases = [
 sub_aliases = [
     { name = "1", command = "yarn workspace {0} test-one" },
     { name = "a", command = "yarn workspace {0} test" },
+    { name = "ci", command = "yarn workspace {0} test-ci" },
 ]
 
 [w]
