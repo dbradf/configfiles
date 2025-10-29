@@ -10,9 +10,5 @@
       "Bash(mv:*)",
       "Bash(rg:*)"
     ]
-  },
-  "model": "opusplan",
-  "feedbackSurveyState": {
-    "lastShownTime": 1754080655910
   }
 }
