@@ -14,7 +14,9 @@ gte = "@withgraphite/gt-engine"
 infra = '@monologue/infra'
 m = '@monologue/mergeability'
 n = "@monologue/notifications"
+r = "@monologue/redis-client"
 s = '@monologue/server'
+ss = '@monologue/statsig-client'
 s3 = '@monologue/s3-client'
 shared = '@monologue/shared-types'
 splash = '@monologue/splash-page'
@@ -45,8 +47,8 @@ sub_aliases = [
 sub_aliases = [
     { name = "lm", command = "yarn workspace @monologue/db-client list-migrations" },
     { name = "cm", command = "yarn workspace @monologue/db-client create-migrations" },
-    { name = "m", command = "yarn workspace @monologue/db-client migrate-prod-dangerous" },
-    { name = "r", command = "yarn workspace @monologue/db-client revert-last-prod-migration-dangerous" },
+    { name = "m", command = "yarn workspace @monologue/db-client migrate-dangerous" },
+    { name = "r", command = "yarn workspace @monologue/db-client revert-last-migration-dangerous" },
 ]
 
 [g]
