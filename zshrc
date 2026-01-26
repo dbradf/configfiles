@@ -146,3 +146,16 @@ if [ $? -eq 0 ]; then
 fi
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# bun completions
+[ -s "/Users/dbradf/.bun/_bun" ] && source "/Users/dbradf/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# vcpkg
+if [ -e "$HOME/.vcpkg" ]; then
+    export VCPKG_ROOT="$HOME/.vcpkg"
+fi
+
