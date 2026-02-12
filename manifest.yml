@@ -99,10 +99,6 @@ files:
     destination: bin/pretty
     location: Home
 
-  - source: aliases.toml
-    destination: .aliases.toml
-    location: Home
-
   - source: epithet.toml
     destination: epithet/epithet.toml
     location: Config
@@ -117,4 +113,8 @@ files:
 
   - source: claude-commands
     destination: .claude/commands
+    location: Home
+
+  - source: cursor/skills
+    destination: .cursor/skills
     location: Home

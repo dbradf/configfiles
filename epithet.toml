@@ -2,18 +2,21 @@
 a = '@monologue/graphite-app'
 ai = "@monologue/ai-client"
 c = "@monologue/cache-client"
+cereal = "@monologue/models"
 cli = "@withgraphite/graphite-cli"
 clis = "@withgraphite/cli-shared"
 db = '@monologue/db-client'
 ga = "@monologue/parse-gitattributes"
 gco = '@monologue/parse-github-codeowners'
 gcr = "@withgraphite/graphite-cli-routes"
+gh = "@monologue/github-client"
 git = '@monologue/git-client'
 gtis = "@withgraphite/gti-server"
 gte = "@withgraphite/gt-engine"
 infra = '@monologue/infra'
 m = '@monologue/mergeability'
 n = "@monologue/notifications"
+prd = "@monologue/pr-diffs"
 r = "@monologue/redis-client"
 s = '@monologue/server'
 ss = '@monologue/statsig-client'
@@ -136,7 +139,7 @@ sub_aliases = [
 
 [t]
 sub_aliases = [
-    { name = "1", command = "yarn workspace {0} test-one" },
+    { name = "1", command = "yarn workspace {0} test " },
     { name = "a", command = "yarn workspace {0} test" },
     { name = "ci", command = "yarn workspace {0} test-ci" },
 ]
