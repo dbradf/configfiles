@@ -57,6 +57,7 @@ Follow these repository-specific rules:
 - Keep tests simple and specific; avoid broad fixtures that hide intent.
 - Follow AAA structure consistently in each test block: arrange setup data, act by invoking behavior, assert expected outcomes.
 - Prefer whole-object assertions over field-by-field assertions when possible so failure output shows full object context.
+- When tests need to cover a non-exported function, add a test-only export alias with a `ForTests` suffix (for example `export { foo as fooForTests };`) so intent is explicit and the original symbol remains conceptually private.
 
 ## Quality checklist
 
@@ -73,6 +74,7 @@ Before finalizing tests, verify:
 - mocking tools are avoided unless absolutely necessary, and any unavoidable usage is minimal and justified
 - tests avoid `as` type assertions; `fromPartial` is used when partial typed fixtures are required
 - assertions prefer validating full objects in one check when practical, rather than many per-field checks
+- non-exported functions are exposed for tests via explicit `ForTests` alias exports (for example `fooForTests`)
 
 ## Suggested output format
 

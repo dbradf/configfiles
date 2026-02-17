@@ -118,3 +118,7 @@ files:
   - source: cursor/skills
     destination: .cursor/skills
     location: Home
+
+  - source: cursor/skills
+    destination: .claude/skills
+    location: Home
