@@ -16,6 +16,7 @@ gte = "@withgraphite/gt-engine"
 infra = '@monologue/infra'
 m = '@monologue/mergeability'
 n = "@monologue/notifications"
+p = "@monologue/platform-gateway-client"
 prd = "@monologue/pr-diffs"
 r = "@monologue/redis-client"
 s = '@monologue/server'

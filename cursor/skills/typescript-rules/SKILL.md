@@ -91,14 +91,70 @@ function parseUser(value: unknown): User {
 
 If the target type is only partially known, use a smaller precise type instead of asserting the entire object.
 
+### 3. Exported functions go at the top
+
+List exported functions before internal private helpers. Exported functions define the file's public API and should be easy to find at the top of the module.
+
+Keep supporting types, interfaces, and constants near the top when needed, but order functions so the public surface comes before private implementation details.
+
+**Bad:**
+
+```typescript
+function normalizeInput(input: string) {
+  return input.trim();
+}
+
+export function parseName(input: string) {
+  return normalizeInput(input);
+}
+```
+
+**Good:**
+
+```typescript
+export function parseName(input: string) {
+  return normalizeInput(input);
+}
+
+function normalizeInput(input: string) {
+  return input.trim();
+}
+```
+
+If reordering would break dependency order, keep the code valid and use the closest arrangement that still keeps exported functions grouped before private helpers.
+
+### 4. Avoid unused parameters
+
+Do not keep unused parameters around by default. If a parameter is unused, actively try to remove it and update call sites instead of leaving dead arguments in the API.
+
+**Bad:**
+
+```typescript
+export function formatName(name: string, includePrefix: boolean) {
+  return name.trim();
+}
+```
+
+**Good:**
+
+```typescript
+export function formatName(name: string) {
+  return name.trim();
+}
+```
+
+If a function must keep a parameter temporarily for interface compatibility, overriding a required signature, or a staged migration, document that constraint in code or discussion and keep the exception narrow.
+
 ## Workflow
 
 1. Inspect the value that is currently weakly typed.
 2. Identify the narrowest correct type at that point in the flow.
 3. Replace `any` with a specific type, `unknown`, or a constrained generic.
 4. Replace `as unknown as` with narrowing, validation, or a typed conversion helper.
-5. Keep unsafe data handling at the boundary of the system rather than spreading it through the file.
-6. Run lint or tests when available.
+5. Reorder functions so exported functions appear before private helpers when the file remains valid.
+6. Remove unused parameters and update call sites unless a real compatibility constraint requires keeping them.
+7. Keep unsafe data handling at the boundary of the system rather than spreading it through the file.
+8. Run lint or tests when available.
 
 ## Quality checklist
 
@@ -106,6 +162,8 @@ Before finalizing:
 
 - no new `any` was introduced
 - no `as unknown as` remains
+- exported functions are grouped before private helpers when possible
+- unused parameters were removed unless there is a documented reason to keep them
 - weakly typed inputs are narrowed before use
 - helper types are specific and local when possible
 - conversions are explicit and justified
@@ -123,6 +181,7 @@ Applied TypeScript rules to: <filename>
 Changes:
 - Replaced `any` with: <specific types, `unknown`, or generics>
 - Replaced unsafe assertions with: <guards, parsers, or helpers>
+- Removed unused parameters where possible
 
 Verification:
 - Ran: <command or "not run">
