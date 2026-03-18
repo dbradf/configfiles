@@ -11,18 +11,6 @@ source "$HOME/.zsh/aliases"
 
 export PATH="$HOME/.local/epithet/bin:$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH"
 
-if [ -e "$HOME/.nvm" ]; then
-  export NVM_DIR="$HOME/.nvm"
-  if [ "$system_name" = "Darwin" ]; then
-    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-  else
-    source /usr/share/nvm/nvm.sh
-    source /usr/share/nvm/bash_completion
-    source /usr/share/nvm/install-nvm-exec
-  fi
-fi
-
 if [ "$system_name" = "Darwin" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     # export PATH="/opt/homebrew/bin:$PATH"
@@ -144,8 +132,6 @@ which atuin > /dev/null
 if [ $? -eq 0 ]; then
     eval "$(atuin init zsh)"
 fi
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # bun completions
 [ -s "/Users/dbradf/.bun/_bun" ] && source "/Users/dbradf/.bun/_bun"
