@@ -24,6 +24,9 @@ Use this skill when working on unit tests for TypeScript code, including:
    - Match existing test runner, file naming, and assertion style.
    - Reuse local helpers and fixtures before introducing new patterns.
 2. Identify behavior to validate.
+   - **Tests should be valuable:** each test should protect real behavior that could break in a way that matters (logic, branching, invariants, error handling, public contracts).
+   - **Usually skip:** pure passthroughs or thin wrappers that only forward arguments to another function with no transformation, policy, or error shaping — testing them mostly duplicates tests on the callee and adds noise.
+   - **Usually skip:** logging — do not assert that loggers were called, log levels, or message strings; logs are diagnostic, not product behavior.
    - Cover the main behavior first.
    - Add edge cases and failure paths that are likely to regress.
 3. Implement tests with low coupling.
@@ -31,6 +34,7 @@ Use this skill when working on unit tests for TypeScript code, including:
    - Assert outcomes, observable side effects, and contracts.
    - Prefer a single whole-object assertion when practical instead of many field-by-field assertions.
    - Avoid asserting internal implementation details.
+   - Do not write tests that only prove passthrough wiring (same inputs in → same call out) unless the wrapper adds meaningful behavior worth locking in.
    - Do not write tests or assertions that verify logging calls/messages; logs are not valuable behavior to test.
    - Default to parameterized tests when multiple scenarios share the same assertion shape.
 4. Use lightweight test data.
@@ -46,6 +50,7 @@ Use this skill when working on unit tests for TypeScript code, including:
 
 Follow these repository-specific rules:
 
+- Prioritize valuable tests: behavior with branches, data transformation, validation, retries, error mapping, and public API contracts. Avoid tests whose failure would only mean "we changed a delegate" or "we reworded a log."
 - Test names should include "should" and describe behavior.
 - Prefer parameterized tests as the default for multi-case behavior.
 - Typically implement parameterization by iterating over an inline array of test-case objects, where each object provides the inputs and expected output for one case (for example via `forEach`).
@@ -58,6 +63,7 @@ Follow these repository-specific rules:
 - Keep tests simple and specific; avoid broad fixtures that hide intent.
 - Follow AAA structure consistently in each test block: arrange setup data, act by invoking behavior, assert expected outcomes.
 - Prefer whole-object assertions over field-by-field assertions when possible so failure output shows full object context.
+- Do not add tests whose sole purpose is verifying passthrough from caller to a dependency with no intermediate logic; test the dependency or the code that adds real behavior instead.
 - Do not add tests or assertions for whether logging is triggered (for example `console.log`, logger info/debug/warn/error calls).
 - When tests need to cover a non-exported function, add a test-only export alias with a `ForTests` suffix (for example `export { foo as fooForTests };`) so intent is explicit and the original symbol remains conceptually private.
 
@@ -66,6 +72,7 @@ Follow these repository-specific rules:
 Before finalizing tests, verify:
 
 - tests are deterministic (no hidden time/random/network dependencies)
+- each test targets valuable behavior (not trivial passthrough or logging)
 - each assertion is meaningful and tied to expected behavior
 - happy path and key edge cases are covered
 - failure behavior is tested where relevant
@@ -76,7 +83,7 @@ Before finalizing tests, verify:
 - mocking tools are avoided unless absolutely necessary, and any unavoidable usage is minimal and justified
 - tests avoid `as` type assertions; `fromPartial` is used when partial typed fixtures are required
 - assertions prefer validating full objects in one check when practical, rather than many per-field checks
-- tests do not assert logging behavior or logger call counts/messages
+- tests do not exist only to assert passthrough to another unit; tests do not assert logging behavior or logger call counts/messages
 - non-exported functions are exposed for tests via explicit `ForTests` alias exports (for example `fooForTests`)
 
 ## Suggested output format
