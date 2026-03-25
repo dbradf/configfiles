@@ -9,8 +9,6 @@ autoload -U compinit; compinit
 
 source "$HOME/.zsh/aliases"
 
-export PATH="$HOME/.local/epithet/bin:$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH"
-
 if [ "$system_name" = "Darwin" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
     # export PATH="/opt/homebrew/bin:$PATH"
@@ -65,6 +63,11 @@ if [ $? -eq 0 ]; then
     alias vpn-connect="networksetup -connectpppoeservice"
     alias vpn-disconnect="networksetup -disconnectpppoeservice"
     alias vpn-status="networksetup -showpppoestatus"
+fi
+
+which mise > /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(mise activate zsh)"
 fi
 
 if [ -e "$HOME/.zshrc_local" ]; then
@@ -145,3 +148,4 @@ if [ -e "$HOME/.vcpkg" ]; then
     export VCPKG_ROOT="$HOME/.vcpkg"
 fi
 
+export PATH="$HOME/.local/epithet/bin:$HOME/.cargo/bin:$HOME/tools/go/bin:$HOME/.local/bin:$HOME/bin:$PATH"

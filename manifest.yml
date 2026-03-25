@@ -122,3 +122,7 @@ files:
   - source: cursor/skills
     destination: .claude/skills
     location: Home
+
+  - source: mise
+    destination: .config/mise
+    location: Home

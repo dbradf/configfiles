@@ -67,18 +67,18 @@ sub_aliases = [
 ]
 
 [gt]
-command = "~/bin/gt"
+command = "~/.local/share/mise/installs/node/22.22.0/bin/gt"
 sub_aliases = [
-    { name = 'a', command = '~/bin/gt add' },
-    { name = 'd', command = "~/bin/gt diff" },
-    { name = 'dc', command = "~/bin/gt diff --cached" },
-    { name = 'df', command = "~/bin/gt delete --force" },
-    { name = 'r', command = '~/bin/gt restack' },
-    { name = 's', command = "~/bin/gt submit" },
-    { name = 'sf', command = "~/bin/gt sync --force" },
-    { name = 'sp', command = "~/bin/gt split" },
-    { name = 'st', command = "~/bin/gt status" },
-    { name = 'ws', command = "~/bin/gt submit --web" },
+    { name = 'a', command = '~/.local/share/mise/installs/node/22.22.0/bin/gt add' },
+    { name = 'd', command = "~/.local/share/mise/installs/node/22.22.0/bin/gt diff" },
+    { name = 'dc', command = "~/.local/share/mise/installs/node/22.22.0/bin/gt diff --cached" },
+    { name = 'df', command = "~/.local/share/mise/installs/node/22.22.0/bin/gt delete --force" },
+    { name = 'r', command = '~/.local/share/mise/installs/node/22.22.0/bin/gt restack' },
+    { name = 's', command = "~/.local/share/mise/installs/node/22.22.0/bin/gt submit" },
+    { name = 'sf', command = "~/.local/share/mise/installs/node/22.22.0/bin/gt sync --force" },
+    { name = 'sp', command = "~/.local/share/mise/installs/node/22.22.0/bin/gt split" },
+    { name = 'st', command = "~/.local/share/mise/installs/node/22.22.0/bin/gt status" },
+    { name = 'ws', command = "~/.local/share/mise/installs/node/22.22.0/bin/gt submit --web" },
 ]
 
 [ms]
