@@ -1,14 +1,3 @@
-local rt = require("rust-tools")
-
-rt.setup({
-    server = {
-        on_attach = function(_, bufnr)
-            vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-            vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-        end,
-    },
-})
-
 -- LSP diagnostrics
 local sign = function(opts)
     vim.fn.sign_define(opts.name, {
@@ -82,7 +71,7 @@ cmp.setup({
     { name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
     { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
     { name = 'buffer', keyword_length = 2 },        -- source current buffer
-    { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip 
+    { name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip
     { name = 'calc'},                               -- source for math calculation
   },
   window = {
@@ -104,22 +93,21 @@ cmp.setup({
   },
 })
 
--- Treesitter Plugin Setup 
-require('nvim-treesitter.configs').setup {
-  ensure_installed = { "lua", "rust", "toml" },
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting=false,
-    },
-  ident = { enable = true }, 
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
-  }
-}
+-- Treesitter Plugin Setup
+-- require('nvim-treesitter.configs').setup {
+--   ensure_installed = { "lua", "rust", "toml" },
+--   auto_install = true,
+--   highlight = {
+--     enable = true,
+--     additional_vim_regex_highlighting=false,
+--     },
+--   ident = { enable = true },
+--   rainbow = {
+--     enable = true,
+--     extended_mode = true,
+--     max_file_lines = nil,
+--   }
+-- }
 
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-  

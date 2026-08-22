@@ -1,54 +1,46 @@
-local cmd = vim.cmd
-local execute = vim.api.nvim_command
-local fn = vim.fn
+vim.api.nvim_create_autocmd("PackChanged", {
+    callback = function(ev)
+        if ev.data.spec.name == "nvim-treesitter" then
+            vim.cmd("TSUpdate")
+        end
+    end,
+})
 
--- bootstrap packer if it is not installed.
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-    execute 'packadd packer.vim'
-end
+vim.pack.add({
+    -- shared deps
+    'https://github.com/nvim-lua/plenary.nvim',
 
-cmd('autocmd BufWritePost plugins.lua PackerCompile')
+    -- neo-tree
+    'https://github.com/nvim-tree/nvim-web-devicons',
+    'https://github.com/MunifTanjim/nui.nvim',
+    'https://github.com/nvim-neo-tree/neo-tree.nvim',
 
-return require('packer').startup(function() 
-    use 'wbthomason/packer.nvim'
+    'https://github.com/nvim-treesitter/nvim-treesitter',
+    'https://github.com/williamboman/mason.nvim',
+    'https://github.com/williamboman/mason-lspconfig.nvim',
 
-    use 'kyazdani42/nvim-web-devicons'
-    use 'kyazdani42/nvim-tree.lua'
+    'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/ray-x/lsp_signature.nvim',
 
-    use 'nvim-treesitter/nvim-treesitter'
+    'https://github.com/shaunsingh/nord.nvim',
 
-    use 'williamboman/mason.nvim'    
-    use 'williamboman/mason-lspconfig.nvim'
+    'https://github.com/nvim-lua/popup.nvim',
+    'https://github.com/nvim-telescope/telescope.nvim',
 
-    use 'neovim/nvim-lspconfig' 
-    use 'ray-x/lsp_signature.nvim'
-    use 'simrat39/rust-tools.nvim'
-
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-    }
-
-    use {
-        'hoob3rt/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    }
-
-    use 'shaunsingh/nord.nvim'
+    -- Lua line
+    'https://github.com/hoob3rt/lualine.nvim',
 
      -- Completion framework:
-     use 'hrsh7th/nvim-cmp' 
+    'https://github.com/hrsh7th/nvim-cmp',
 
      -- LSP completion source:
-     use 'hrsh7th/cmp-nvim-lsp'
- 
+     'https://github.com/hrsh7th/cmp-nvim-lsp',
+
      -- Useful completion sources:
-     use 'hrsh7th/cmp-nvim-lua'
-     use 'hrsh7th/cmp-nvim-lsp-signature-help'
-     use 'hrsh7th/cmp-vsnip'                             
-     use 'hrsh7th/cmp-path'                              
-     use 'hrsh7th/cmp-buffer'                            
-     use 'hrsh7th/vim-vsnip'          
-end)
+     'https://github.com/hrsh7th/cmp-nvim-lua',
+     'https://github.com/hrsh7th/cmp-nvim-lsp-signature-help',
+     'https://github.com/hrsh7th/cmp-vsnip',
+     'https://github.com/hrsh7th/cmp-path',
+     'https://github.com/hrsh7th/cmp-buffer',
+     'https://github.com/hrsh7th/vim-vsnip',
+})
