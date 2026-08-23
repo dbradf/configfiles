@@ -72,6 +72,10 @@
       "rev": "221c43884319e791519f0d6c94a7f2fbcd653278",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
+    "nvim-tree.lua": {
+      "rev": "b2aadda94b107480c48e548d6db51c6840b7b33c",
+      "src": "https://github.com/kyazdani42/nvim-tree.lua"
+    },
     "nvim-treesitter": {
       "rev": "e82ef6ae2c3eeb96c6916b29917f96bf630b2cdb",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -87,6 +91,10 @@
     "popup.nvim": {
       "rev": "b7404d35d5d3548a82149238289fa71f7f6de4ac",
       "src": "https://github.com/nvim-lua/popup.nvim"
+    },
+    "rust-tools.nvim": {
+      "rev": "676187908a1ce35ffcd727c654ed68d851299d3e",
+      "src": "https://github.com/simrat39/rust-tools.nvim"
     },
     "telescope.nvim": {
       "rev": "40aedd8a68c78a656a10a8d62d80c54af59420fb",

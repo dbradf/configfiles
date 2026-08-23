@@ -16,6 +16,7 @@ vim.lsp.config("lua_ls", {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
   root_markers = { ".luarc.json", ".luarc.jsonc" },
+  hint = { enable = true },
 })
 
 vim.lsp.config("rust_analyzer", {
@@ -58,17 +59,26 @@ sign({ name = "DiagnosticSignHint", text = "" })
 sign({ name = "DiagnosticSignInfo", text = "" })
 
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = true,
   signs = true,
   update_in_insert = true,
   underline = true,
   severity_sort = false,
   float = {
     border = "rounded",
-    source = "always",
+    source = true,
     header = "",
     prefix = "",
   },
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client ~= nil and client:supports_method("textDocument/completion") then
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    end
+  end,
 })
 
 vim.cmd([[
@@ -78,7 +88,8 @@ autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 
 vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
 vim.opt.shortmess = vim.opt.shortmess + { c = true }
-vim.api.nvim_set_option("updatetime", 300)
+vim.api.nvim_set_var("updatetime", 300)
+vim.lsp.inlay_hint.enable(true)
 
 vim.cmd([[
 set signcolumn=yes
@@ -137,22 +148,3 @@ cmp.setup({
     end,
   },
 })
-
--- Treesitter Plugin Setup
--- require('nvim-treesitter.configs').setup {
---   ensure_installed = { "lua", "rust", "toml" },
---   auto_install = true,
---   highlight = {
---     enable = true,
---     additional_vim_regex_highlighting=false,
---     },
---   ident = { enable = true },
---   rainbow = {
---     enable = true,
---     extended_mode = true,
---     max_file_lines = nil,
---   }
--- }
-
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"

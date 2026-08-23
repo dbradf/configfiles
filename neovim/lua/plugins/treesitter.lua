@@ -42,6 +42,22 @@ local ts_parsers = {
   "zig",
 }
 local nts = require("nvim-treesitter")
+
+nts.setup({
+  ensure_installed = ts_parsers,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  ident = { enable = true },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
+  },
+})
+
 nts.install(ts_parsers)
 vim.api.nvim_create_autocmd("PackChanged", {
   callback = function()
@@ -56,3 +72,6 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
+
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
