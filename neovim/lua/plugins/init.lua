@@ -7,8 +7,6 @@ vim.pack.add({
     'https://github.com/MunifTanjim/nui.nvim',
     'https://github.com/nvim-neo-tree/neo-tree.nvim',
 
---    'https://github.com/nvim-treesitter/nvim-treesitter',
-
     'https://github.com/ray-x/lsp_signature.nvim',
 
     'https://github.com/shaunsingh/nord.nvim',
@@ -34,8 +32,7 @@ vim.pack.add({
      'https://github.com/hrsh7th/vim-vsnip',
 })
 
-require('plugins.mason_config')
 require('plugins.treesitter')
-
 require('plugins.lsp_config')
+
 

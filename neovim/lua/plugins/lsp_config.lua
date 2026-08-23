@@ -1,3 +1,37 @@
+vim.pack.add({
+    'https://github.com/williamboman/mason.nvim',
+    'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/williamboman/mason-lspconfig.nvim',
+})
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+vim.lsp.config('rust-analyzer', {
+    settings = {
+        ['rust-analyzer'] = {
+            cargo = { allFeatures = true },
+	    checkOnSave = true,
+	},
+    },
+})
+
+vim.lsp.enable({ 'rust-analyzer' })
+
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(args)
+        local bufnr = args.buf
+	local map = function(mode, lhs, rhs, desc)
+            vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, desc = desc })
+	end
+
+	map('n', '<leader>gd', vim.lsp.buf.definition, 'Go to definition')
+	map('n', '<leader>gD', vim.lsp.buf.declaration, 'Go to declaration')
+	map('n', '<leader>rr', vim.lsp.buf.rename, 'Rename symbol')
+	map('n', '<leader>fb', function() vim.lsp.buf.format({ async = true }) end, 'Format buffer')
+    end,
+})
+
 -- LSP diagnostrics
 local sign = function(opts)
     vim.fn.sign_define(opts.name, {
