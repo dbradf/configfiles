@@ -18,6 +18,8 @@ opt.completeopt = "menuone,noinsert,noselect"
 opt.updatetime = 300
 opt.signcolumn = "yes"
 
+opt.foldenable = false
+
 opt.termguicolors = true
 -- opt.syntax on   -- Turn on syntax highlighting.
 -- syntax enable
@@ -31,4 +33,6 @@ opt.backspace = "indent,eol,start"   -- Allow backspacing over everything.
 bo.tabstop = 4
 bo.shiftwidth = 4
 bo.expandtab = true
+
+
 

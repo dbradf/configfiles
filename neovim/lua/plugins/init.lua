@@ -9,8 +9,6 @@ vim.pack.add({
 
     'https://github.com/ray-x/lsp_signature.nvim',
 
-    'https://github.com/shaunsingh/nord.nvim',
-
     'https://github.com/nvim-lua/popup.nvim',
     'https://github.com/nvim-telescope/telescope.nvim',
 
@@ -34,5 +32,6 @@ vim.pack.add({
 
 require('plugins.treesitter')
 require('plugins.lsp_config')
+require('plugins.comment')
 
 

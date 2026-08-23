@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "Comment.nvim": {
+      "rev": "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
+      "src": "https://github.com/numToStr/Comment.nvim"
+    },
     "cmp-buffer": {
       "rev": "b74fab3656eea9de20a9b8116afa3cfc4ec09657",
       "src": "https://github.com/hrsh7th/cmp-buffer"
@@ -23,6 +27,10 @@
     "cmp-vsnip": {
       "rev": "989a8a73c44e926199bfd05fa7a516d51f2d2752",
       "src": "https://github.com/hrsh7th/cmp-vsnip"
+    },
+    "cyberdream.nvim": {
+      "rev": "39e1fda12c0704e01029b286a4c7e77e33a0c5cd",
+      "src": "https://github.com/scottmckendry/cyberdream.nvim"
     },
     "lsp_signature.nvim": {
       "rev": "b7ace9ddb1640ce266012a45a672dfdaedfa5ec6",
