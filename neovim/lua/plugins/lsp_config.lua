@@ -7,6 +7,12 @@ vim.pack.add({
 require("mason").setup()
 require("mason-lspconfig").setup()
 
+vim.lsp.config('luals', {
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
+  root_markers = { '.luarc.json', '.luarc.jsonc' },
+})
+
 vim.lsp.config('rust-analyzer', {
     settings = {
         ['rust-analyzer'] = {
@@ -16,7 +22,6 @@ vim.lsp.config('rust-analyzer', {
     },
 })
 
-vim.lsp.enable({ 'rust-analyzer' })
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)

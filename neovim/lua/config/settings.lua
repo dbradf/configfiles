@@ -30,9 +30,7 @@ opt.lazyredraw = true -- Lazy redraw of macros.
 
 opt.backspace = "indent,eol,start"   -- Allow backspacing over everything.
 
-bo.tabstop = 4
-bo.shiftwidth = 4
+bo.tabstop = 2
+bo.shiftwidth = 2
 bo.expandtab = true
-
-
 

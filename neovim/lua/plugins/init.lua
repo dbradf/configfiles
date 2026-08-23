@@ -33,5 +33,6 @@ vim.pack.add({
 require('plugins.treesitter')
 require('plugins.lsp_config')
 require('plugins.comment')
+require('plugins.formatting')
 
 
