@@ -1,0 +1,18 @@
+neovim/lua/plugins/lsp_config.lua
+  h_4a24b245cff69f 19,62,69,75-83,91-92
+neovim/lua/plugins/treesitter.lua
+  h_4a24b245cff69f 45-60,75-77
+neovim/nvim-pack-lock.json
+  h_4a24b245cff69f 75-78,95-98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "development:1.6.22",
+  "base_commit_sha": "dbff1deba6fa7b1c1faf9c863177e2e4ab7c425a",
+  "prompts": {},
+  "humans": {
+    "h_4a24b245cff69f": {
+      "author": "David Bradford <dbradf@gmail.com>"
+    }
+  }
+}
