@@ -4,6 +4,7 @@ options = { noremap = true }
 
 vim.g.mapleader = ","
 
+-- Splits
 map("n", "<leader>v", ":vsplit<cr>", options)
 map("n", "<leader>s", ":split<cr>", options)
 

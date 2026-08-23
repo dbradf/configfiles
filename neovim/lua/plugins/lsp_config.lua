@@ -5,17 +5,22 @@ vim.pack.add({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "lua_ls",
+    "rust_analyzer",
+  },
+})
 
-vim.lsp.config("luals", {
+vim.lsp.config("lua_ls", {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
   root_markers = { ".luarc.json", ".luarc.jsonc" },
 })
 
-vim.lsp.config("rust-analyzer", {
+vim.lsp.config("rust_analyzer", {
   settings = {
-    ["rust-analyzer"] = {
+    ["rust_analyzer"] = {
       cargo = { allFeatures = true },
       checkOnSave = true,
     },
